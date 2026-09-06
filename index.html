@@ -27,46 +27,160 @@ header{position:sticky; top:0; z-index:50; display:flex; align-items:center; gap
 #backBtn{border:1px solid var(--line); background:#fff; border-radius:10px; padding:5px 12px; cursor:pointer; font-size:13px;}
 #backBtn:hover{background:#f3ede3;}
 
-/* ---------- 首页 ---------- */
+/* ---------- 首页：两个世界 ---------- */
 #home{max-width:1080px; margin:0 auto; padding:28px 20px 60px;}
 .hero{background:linear-gradient(135deg,#fff6e8,#ffe9d2); border:1px solid #f0dcc0; border-radius:20px; padding:30px 34px; text-align:center; margin-bottom:22px;}
 .hero h1{font-size:30px; margin-bottom:10px;}
 .hero .soul{font-size:19px; font-weight:700; color:var(--primary-deep); letter-spacing:1px;}
 .hero p{color:var(--muted); margin-top:10px; font-size:14px; line-height:1.8;}
-.modebtns{display:flex; gap:14px; justify-content:center; margin:18px 0 8px; flex-wrap:wrap;}
-.bigbtn{border:none; border-radius:16px; padding:16px 34px; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.08); transition:transform .15s;}
-.bigbtn:hover{transform:translateY(-2px);}
-.bigbtn.map{background:var(--primary); color:#fff;}
-.bigbtn.free{background:#fff; color:var(--ink); border:2px solid var(--line);}
+.doors{display:flex; gap:18px; justify-content:center; margin:22px 0 8px; flex-wrap:wrap;}
+.door{border:none; border-radius:18px; padding:22px 30px; width:300px; cursor:pointer; text-align:left; transition:transform .15s, box-shadow .15s; position:relative;}
+.door:hover{transform:translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,.12);}
+.door .dicon{font-size:40px;}
+.door .dtitle{font-size:20px; font-weight:800; margin-top:6px;}
+.door .ddesc{font-size:13px; line-height:1.7; margin-top:6px;}
+.door .dgo{display:inline-block; margin-top:12px; font-size:13px; font-weight:700; border-radius:999px; padding:6px 16px;}
+.door.tut{background:linear-gradient(150deg,#ffefd8,#ffe3c2); border:2px solid #f3c98b; color:var(--ink);}
+.door.tut .dgo{background:var(--primary); color:#fff;}
+.door.free{background:#fff; border:2px solid var(--line);}
+.door.free .dgo{background:var(--ink); color:#fff;}
+.door .dprog{position:absolute; top:14px; right:14px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:11px; padding:3px 10px; color:var(--muted);}
 h2.sec{font-size:18px; margin:26px 0 12px;}
-.lvgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px;}
-.lvcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; cursor:pointer; transition:all .15s; position:relative;}
+.lvgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:14px;}
+.lvcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px; cursor:pointer; transition:all .15s; position:relative;}
 .lvcard:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.09);}
 .lvcard.locked{opacity:.55; cursor:not-allowed; filter:grayscale(.6);}
-.lvicon{font-size:30px; margin-bottom:6px;}
-.lvtitle{font-weight:800; font-size:15px; margin-bottom:4px;}
-.lvgoal{font-size:12px; color:var(--muted); line-height:1.6; min-height:38px;}
-.lvstars{margin-top:8px; font-size:14px; letter-spacing:2px; color:var(--gold);}
-.soul-tag{position:absolute; top:10px; right:10px; background:#b91c1c; color:#fff; font-size:10px; border-radius:999px; padding:2px 8px;}
+.lvicon{font-size:28px; margin-bottom:4px;}
+.lvtitle{font-weight:800; font-size:14px; margin-bottom:3px;}
+.lvlearn{font-size:11px; color:var(--primary-deep); margin-top:6px; background:#fff4e8; border-radius:8px; padding:3px 8px; display:inline-block;}
+.lvdone{position:absolute; top:10px; right:10px; font-size:14px;}
+.soul-tag{position:absolute; top:10px; left:10px; background:#b91c1c; color:#fff; font-size:10px; border-radius:999px; padding:2px 8px;}
 .homefoot{text-align:center; margin-top:30px; color:var(--muted); font-size:12px;}
 .homefoot button{background:none; border:none; color:var(--muted); text-decoration:underline; cursor:pointer; font-size:12px;}
 
-/* ---------- 工作台 ---------- */
+/* ---------- 新手冒险（教程） ---------- */
+#tut{max-width:880px; margin:0 auto; padding:14px 16px 60px;}
+.tuthead{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;}
+.tuthead .tname{font-size:18px; font-weight:800;}
+.tuthead .tlearn{font-size:12px; background:#fff4e8; color:var(--primary-deep); border-radius:999px; padding:4px 12px;}
+.tuthead .tprog{margin-left:auto; font-size:12px; color:var(--muted);}
+.tcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px; margin-bottom:12px;}
+.tcard h3{font-size:14px; margin-bottom:8px;}
+
+/* 老师框 */
+.teacher{display:flex; gap:12px; align-items:flex-start;}
+.tavatar{width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,#fff3dd,#ffe3b8); border:2px solid #f0d5a0;
+  display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;}
+.tbody{flex:1; min-width:0;}
+.ttext{font-size:15px; line-height:1.9; min-height:30px;}
+.ttext b{color:var(--primary-deep);}
+.tactions{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;}
+.tbtn{border:none; border-radius:999px; padding:8px 22px; font-size:14px; font-weight:700; cursor:pointer; background:var(--primary); color:#fff;}
+.tbtn:hover{background:var(--primary-deep);}
+.tbtn.ghost{background:#fff; color:var(--ink); border:1px solid var(--line);}
+.topt{border:2px solid var(--line); background:#fff; border-radius:12px; padding:9px 18px; font-size:14px; font-weight:700; cursor:pointer; text-align:left; transition:all .12s;}
+.topt:hover{border-color:var(--primary); background:#fff8f0;}
+.topt.ok{border-color:var(--ok); background:#effaf1;}
+.topt.no{animation:shake .35s; border-color:var(--bad); background:#fdeeee;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* 舞台 */
+.stage{position:relative; min-height:230px; background:linear-gradient(180deg,#fffbf4,#fdf5e8); overflow:hidden;}
+.stagescene{display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:200px; padding:16px; gap:10px;}
+.paper{background:#fff; border:1px solid #eadfc8; border-radius:8px; padding:14px 26px; font-size:20px; font-weight:800;
+  box-shadow:2px 3px 0 #e8dcc2; transform:rotate(-2deg);}
+.apples{font-size:34px; letter-spacing:6px;}
+.varbox{background:#fff; border:2px solid #d9c79c; border-radius:12px; padding:8px 18px; text-align:center;}
+.varbox .vbname{font-size:12px; color:var(--muted);}
+.varbox .vbval{font-size:22px; font-weight:800;}
+.gatewrap{display:flex; gap:24px; align-items:center; justify-content:center; font-size:38px; flex-wrap:wrap;}
+.personcard{background:#fff; border:2px solid #cfe0f5; border-radius:14px; padding:10px 18px; text-align:center;}
+.personcard .pemoji{font-size:30px;}
+.personcard .pname{font-size:13px; font-weight:800; margin-top:2px;}
+.personcard .pheight{font-size:12px; color:var(--muted);}
+.maptack{position:relative; width:100%; max-width:560px; margin:0 auto; padding:10px 0;}
+.mapcells{display:flex; gap:8px; justify-content:center;}
+.mcell{width:54px; height:54px; border-radius:10px; background:#fff; border:2px dashed #dccfae; display:flex; align-items:center; justify-content:center; font-size:26px;}
+.mcell.flag{border-style:solid; border-color:#e8a13a; background:#fff6e2;}
+#mapRobot{position:absolute; top:10px; left:0; font-size:34px; transition:left .4s ease; z-index:5; width:54px; text-align:center;}
+.rocketwrap{display:flex; align-items:center; gap:22px; justify-content:center;}
+.rocketnum{font-size:54px; font-weight:800; min-width:80px; text-align:center; font-family:Consolas,monospace;}
+#rocketEmoji{font-size:48px; display:inline-block; transition:transform 1s ease, opacity 1s;}
+#rocketEmoji.fly{transform:translateY(-140px); opacity:0;}
+.chipsrow{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; max-width:520px;}
+.schip{background:#fff; border:1px solid var(--line); border-radius:999px; padding:4px 14px; font-size:14px; font-weight:600;}
+.basketrobots{font-size:32px; letter-spacing:10px;}
+.robotline{display:flex; align-items:center; gap:14px; justify-content:center; position:relative; z-index:3;}
+#tutRobot{font-size:64px; display:inline-block; transition:transform .2s;}
+#tutRobot.dizzy{animation:dizzy .8s infinite;}
+@keyframes dizzy{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+#tutRobot.party{animation:party .5s infinite;}
+@keyframes party{0%,100%{transform:scale(1) rotate(-5deg)}50%{transform:scale(1.18) rotate(5deg)}}
+.rbubble{background:#fff; border:2px solid var(--line); border-radius:16px; padding:8px 16px; font-size:17px; font-weight:700;
+  min-width:70px; min-height:40px; text-align:center; max-width:300px;}
+.tutconsole{background:#2d2a26; color:#e8e2d5; border-radius:10px; padding:8px 12px; font-family:Consolas,monospace; font-size:13px;
+  min-height:38px; line-height:1.6; margin-top:10px; white-space:pre-wrap; word-break:break-all;}
+.tutconsole .cempty{color:#8a8175;}
+.tutdesc{font-size:12px; color:var(--muted); margin-top:6px; min-height:18px;}
+.confetti{position:absolute; font-size:20px; animation:confall 1.6s ease-in forwards; pointer-events:none; z-index:20;}
+@keyframes confall{from{transform:translateY(-20px) rotate(0); opacity:1}to{transform:translateY(200px) rotate(360deg); opacity:0}}
+
+/* 教程装配区 */
+#tutWS{min-height:64px; display:flex; flex-direction:column; gap:8px;}
+.tempty{text-align:center; color:var(--muted); font-size:13px; padding:16px 10px; border:2px dashed var(--line); border-radius:12px; line-height:1.9;}
+.tb{border:1px solid var(--line); border-left:5px solid var(--c,#999); border-radius:12px; background:#fff; overflow:hidden; position:relative;}
+.tb.now{outline:3px solid var(--gold); box-shadow:0 0 0 6px rgba(242,165,22,.18);}
+.tb .tbhead{display:flex; align-items:center; gap:8px; padding:7px 10px; background:#faf6f0; font-size:13px; flex-wrap:wrap;}
+.tb .tbhead b{font-size:13.5px;}
+.tb .tbctl{margin-left:auto; display:flex; gap:3px;}
+.tb .mini{border:1px solid var(--line); background:#fff; border-radius:7px; padding:1px 7px; cursor:pointer; font-size:12px;}
+.tb .tbdetail{padding:7px 10px; font-size:13px; line-height:1.7; background:#fff;}
+.tb .tbdetail b{color:var(--primary-deep);}
+.stopcard{background:#fff1f0; border:1px solid #ffd2cd; border-radius:10px; padding:8px 10px; margin:6px 0; font-size:13px; font-weight:700; color:#b91c1c;}
+.tbodybox{border:1px dashed #d8cfc0; border-radius:10px; padding:8px; margin:6px 0; display:flex; flex-direction:column; gap:6px; background:#fdfbf7;}
+.tbodylabel{font-size:11px; color:var(--muted); font-weight:700;}
+.addslot{border:2px dashed #d8cfc0; background:#fdfbf7; border-radius:10px; padding:6px; cursor:pointer; font-size:14px; color:var(--muted);}
+.addslot:hover{border-color:var(--primary); color:var(--primary); background:#fff8f0;}
+.unfoldbtn{border:1px solid var(--line); background:#fff; border-radius:999px; padding:3px 12px; font-size:11px; cursor:pointer; color:var(--muted); margin-left:8px;}
+.unfoldbtn:hover{color:var(--primary-deep); border-color:var(--primary);}
+
+/* 底部操作坞 */
+.dock{display:flex; gap:10px; align-items:center; flex-wrap:wrap; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:12px 14px;}
+.dock .dlabel{font-size:12px; color:var(--muted); font-weight:700; width:100%;}
+.tpacks{display:flex; gap:8px; flex-wrap:wrap;}
+.tpack{border:1px solid var(--line); border-top:3px solid #e8722a; background:#fff; border-radius:11px; padding:8px 14px; cursor:pointer; text-align:center; transition:all .15s; position:relative;}
+.tpack:hover{transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.1);}
+.tpack .pi{font-size:20px;}
+.tpack .pn{font-size:12px; font-weight:700; margin-top:2px;}
+.tpack.newpack{animation:popin .5s;}
+@keyframes popin{0%{transform:scale(.3); opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+#tutRun{border:none; border-radius:12px; padding:12px 30px; font-size:16px; font-weight:800; cursor:pointer;
+  background:linear-gradient(180deg,#2fbf59,#16a34a); color:#fff; box-shadow:0 4px 0 #0e7a37; margin-left:auto;}
+#tutRun:active{transform:translateY(2px); box-shadow:0 2px 0 #0e7a37;}
+.dockbtn{border:1px solid var(--line); background:#fff; border-radius:999px; padding:8px 14px; font-size:12px; cursor:pointer; font-weight:700; color:var(--muted);}
+.dockbtn:hover{color:var(--primary-deep); border-color:var(--primary);}
+
+/* 聚光灯 */
+#spotOverlay{position:fixed; inset:0; background:rgba(35,28,16,.55); z-index:1000;}
+.lit{position:relative; z-index:1001; outline:3px solid var(--gold); box-shadow:0 0 0 6px rgba(242,165,22,.25), 0 0 30px rgba(242,165,22,.5); border-radius:12px;}
+
+/* Python 揭示弹层 */
+.pyrev-h{background:#fffaf3; border:1px solid #f0e2cc; border-radius:10px; padding:10px 14px; font-size:15px; font-weight:700; line-height:1.8; margin-bottom:8px;}
+.pyrev-arrow{text-align:center; font-size:15px; color:var(--primary-deep); font-weight:800; margin:8px 0;}
+.pyrev-note{font-size:13.5px; line-height:1.9; color:#5c5144; margin-top:10px; background:#fdf6e3; border-radius:10px; padding:10px 12px;}
+.foldwrap{text-align:center;}
+.foldchain{background:#fdfbf7; border:1px dashed #d8cfc0; border-radius:12px; padding:14px; font-size:14px; line-height:2; display:inline-block; text-align:left; margin-bottom:10px;}
+.foldbig{font-size:44px; text-align:center; animation:popin .6s; margin:6px 0;}
+.foldname{font-size:20px; font-weight:800; text-align:center;}
+
+/* ---------- 自由工坊（完整工作台） ---------- */
 #builder{padding:14px 16px 40px;}
 .cols{display:grid; grid-template-columns:280px 1fr 400px; gap:14px; align-items:start;}
 .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px;}
 .card h3{font-size:14px; margin-bottom:10px; display:flex; align-items:center; gap:6px;}
 .card h3 .sub{font-weight:400; color:var(--muted); font-size:11px;}
 .col-left,.col-mid{display:flex; flex-direction:column; gap:14px;}
-
-.goal-text{font-size:14px; line-height:1.8; background:#fffaf3; border:1px solid #f0e2cc; border-radius:10px; padding:10px;}
-.datatbl{width:100%; font-size:12px; border-collapse:collapse; margin-top:8px;}
-.datatbl td{border-bottom:1px dashed var(--line); padding:5px 4px; vertical-align:top;}
-.datatbl td:first-child{color:var(--muted); white-space:nowrap; padding-right:10px;}
-.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
-.chip{font-size:11px; background:#f1f5ff; color:var(--c-seq); border-radius:999px; padding:2px 10px;}
 .hintbox{margin-top:10px; font-size:12px; background:#fdf6e3; border:1px solid #efe0b3; border-radius:10px; padding:9px; line-height:1.7; color:#7a5b12;}
-
 .palette{display:grid; grid-template-columns:1fr 1fr; gap:7px;}
 .packbtn{border:1px solid var(--line); background:#fff; border-radius:11px; padding:8px 6px; cursor:pointer; text-align:center; transition:all .12s; border-top:3px solid var(--cc);}
 .packbtn:hover{transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.08);}
@@ -74,7 +188,6 @@ h2.sec{font-size:18px; margin:26px 0 12px;}
 .packbtn .pn{font-size:12px; font-weight:700; margin-top:2px;}
 .packbtn .pd{font-size:10px; color:var(--muted); margin-top:1px;}
 .palcats{font-size:11px; color:var(--muted); margin:8px 0 5px; font-weight:700;}
-
 #workspace{min-height:120px; display:flex; flex-direction:column; gap:8px;}
 .emptyws{text-align:center; color:var(--muted); font-size:13px; padding:30px 10px; border:2px dashed var(--line); border-radius:12px; line-height:1.9;}
 .block{border:1px solid var(--line); border-left:5px solid var(--c,#999); border-radius:12px; background:#fff; overflow:hidden;}
@@ -104,7 +217,7 @@ h2.sec{font-size:18px; margin:26px 0 12px;}
 .btn.ghost{background:#fff; border:1px solid var(--line); color:var(--ink);}
 .runbar select{border:1px solid var(--line); border-radius:9px; padding:6px 8px; font-size:12px; background:#fff;}
 
-/* ---------- 右侧页签 ---------- */
+/* 右侧页签 */
 .tabs{display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap;}
 .tab{border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 13px; font-size:12px; cursor:pointer; font-weight:600;}
 .tab.on{background:var(--ink); color:#fff; border-color:var(--ink);}
@@ -140,1180 +253,2013 @@ pre.code{background:#1e293b; color:#e2e8f0; border-radius:10px; padding:13px; fo
 .fb .fbtext div{padding:1px 0;}
 .tree{font-family:Consolas,monospace; font-size:12px; background:#fdfbf7; border:1px solid var(--line); border-radius:9px; padding:8px; line-height:1.8;}
 
-/* ---------- 弹层 ---------- */
-#toast{position:fixed; left:50%; bottom:34px; transform:translateX(-50%); background:#3b3025; color:#fff; padding:9px 22px; border-radius:999px; font-size:13px; z-index:200; opacity:0; transition:opacity .25s; pointer-events:none;}
+/* 弹层 */
+#toast{position:fixed; left:50%; bottom:34px; transform:translateX(-50%); background:#3b3025; color:#fff; padding:9px 22px; border-radius:999px; font-size:13px; z-index:1200; opacity:0; transition:opacity .25s; pointer-events:none;}
 #toast.show{opacity:1;}
-#modalWrap{position:fixed; inset:0; background:rgba(50,40,25,.45); z-index:100; display:flex; align-items:center; justify-content:center; padding:20px;}
-.mcard{background:#fff; border-radius:18px; padding:24px 26px; max-width:520px; width:100%; max-height:86vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.25);}
+#modalWrap{position:fixed; inset:0; background:rgba(50,40,25,.45); z-index:1100; display:flex; align-items:center; justify-content:center; padding:20px;}
+.mcard{background:#fff; border-radius:18px; padding:24px 26px; max-width:540px; width:100%; max-height:86vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.25);}
 .mcard h3{margin-bottom:10px; font-size:19px;}
 .mcard p{font-size:13.5px; line-height:1.9; color:#5c5144; margin-bottom:10px;}
 .mbtns{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
-.wstars{font-size:30px; letter-spacing:6px; text-align:center; margin:8px 0 4px;}
-.wtitle{text-align:center; font-size:20px; font-weight:800; margin-bottom:4px;}
-.wsub{text-align:center; color:var(--muted); font-size:13px; margin-bottom:14px;}
-.wrow{display:flex; gap:8px; font-size:12.5px; padding:6px 4px; border-bottom:1px dashed var(--line); align-items:flex-start; line-height:1.5;}
-.wrow .st{font-weight:800;}
+.wtitle{text-align:center; font-size:21px; font-weight:800; margin-bottom:6px;}
+.wstars{font-size:30px; letter-spacing:6px; text-align:center; margin:6px 0;}
+.wsub{text-align:center; color:var(--muted); font-size:13px; margin-bottom:14px; line-height:1.8;}
+.wlearn{text-align:center; font-size:13px; background:#fff4e8; border-radius:10px; padding:8px 14px; margin-bottom:12px; color:var(--primary-deep); font-weight:700;}
 .wxp{text-align:center; font-weight:800; color:var(--primary-deep); margin:12px 0 2px;}
 .varedit{display:flex; gap:6px; margin-bottom:6px; align-items:center;}
 .varedit input{border:1px solid var(--line); border-radius:8px; padding:4px 8px; font-size:12px; font-family:inherit; background:#fff;}
 .varedit .vn{width:88px;}
 .varedit .vv{flex:1; font-family:Consolas,monospace;}
 #goalInput{width:100%; border:1px solid var(--line); border-radius:9px; padding:7px 10px; font-size:13px; font-family:inherit; background:#fff;}
+.hintmodal .htier{font-size:11px; color:#fff; background:var(--primary); border-radius:999px; padding:2px 10px; display:inline-block; margin-bottom:8px;}
+.hintmodal .htext{font-size:14.5px; line-height:1.9;}
 
 @media (max-width:1200px){ .cols{grid-template-columns:1fr 1fr;} .col-right{grid-column:1 / -1;} }
-@media (max-width:860px){ .cols{grid-template-columns:1fr;} }
+@media (max-width:860px){ .cols{grid-template-columns:1fr;} .doors{flex-direction:column; align-items:center;} }
 </style>
 </head>
 <body>
 <header>
-  <button id="backBtn" class="hidden">← 返回</button>
-  <div class="logo">🧩 逻辑工坊<small>编程逻辑训练器</small></div>
-  <div class="tagline">别急着告诉电脑怎么做，先想清楚它什么时候该停</div>
-  <div class="hud"><span id="xpBadge">⭐ 0 经验</span><span id="starBadge">🏅 0 星</span></div>
+  <span class="logo">⚙️ 逻辑工坊<small>Logic Forge</small></span>
+  <span class="tagline">先想清楚它什么时候该停，再告诉它怎么做</span>
+  <span class="hud"><span id="xpHud">⭐ 0 XP</span></span>
+  <button id="backBtn" class="hidden">🏠 回首页</button>
 </header>
 
-<main>
-  <section id="home">
-    <div class="hero">
-      <h1>🧩 逻辑工坊</h1>
-      <div class="soul">别急着告诉电脑怎么做，先想清楚它什么时候该停。</div>
-      <p>像拼实体积木一样拼出逻辑：先定目标 → 有循环就先写出口 → 点选逻辑零件组装 → 实时看变量、条件、循环、输出一步步变化<br>最后，把这套思维自动映射成真正的 Python 代码。</p>
-      <div class="modebtns">
-        <button class="bigbtn map" id="goLevel">🗺️ 闯关模式</button>
-        <button class="bigbtn free" id="goFree">🛠️ 自由搭建</button>
+<!-- ================= 首页：两个世界 ================= -->
+<section id="home">
+  <div class="hero" style="position:relative;">
+    <div class="soul-tag">灵魂法则</div>
+    <h1>⚙️ 逻辑工坊</h1>
+    <div class="soul">先想清楚它什么时候该停</div>
+    <p>把一个想法拆成一步一步的零件，交给小笨机器人去跑。<br>它很听话，但一点脑筋都不动——所以每个循环，都必须有出口。</p>
+  </div>
+  <div class="doors">
+    <button class="door tut" id="doorTut">
+      <span class="dprog" id="tutProgBadge">0 / 16 关</span>
+      <span class="dicon">🐣</span>
+      <div class="dtitle">新手冒险</div>
+      <div class="ddesc">跟着小笨闯 16 关，从「让它说话」一路搭到毕业挑战。<b>每关只学一个新零件</b>，卡住了有三层提示，绝不扣星。</div>
+      <span class="dgo">开始冒险 →</span>
+    </button>
+    <button class="door free" id="doorFree">
+      <span class="dprog">完整工作台</span>
+      <span class="dicon">🔧</span>
+      <div class="dtitle">自由工坊</div>
+      <div class="ddesc">全部逻辑零件、逐句执行、Python 对照、五维判定。想搭什么搭什么——但出口自己想清楚。</div>
+      <span class="dgo">直接开工 →</span>
+    </button>
+  </div>
+  <h2 class="sec">🗺️ 冒险地图</h2>
+  <div class="lvgrid" id="lvGrid"></div>
+  <div class="homefoot">进度存在这台电脑上 · <button id="resetBtn">重置全部进度</button></div>
+</section>
+
+<!-- ================= 新手冒险（教程） ================= -->
+<section id="tut" class="hidden">
+  <div class="tuthead">
+    <button class="btn ghost" id="tutBack" style="padding:5px 14px; font-size:13px;">← 地图</button>
+    <span class="tname" id="tutName"></span>
+    <span class="tlearn" id="tutLearn"></span>
+    <span class="tprog" id="tutProg"></span>
+  </div>
+  <div class="tcard">
+    <div class="teacher">
+      <div class="tavatar">🤖</div>
+      <div class="tbody">
+        <div class="ttext" id="tutText">…</div>
+        <div class="tactions" id="tutActions"></div>
       </div>
     </div>
-    <h2 class="sec">关卡地图</h2>
-    <div class="lvgrid" id="lvGrid"></div>
-    <div class="homefoot">从「想干嘛」开始，每一关都在练一件事：让电脑听懂你的逻辑。<button id="resetProg">重置全部进度</button></div>
-  </section>
+  </div>
+  <div class="tcard">
+    <h3>🎬 舞台</h3>
+    <div class="stage" id="tutStage"></div>
+    <div class="tutconsole" id="tutConsole"><span class="cempty">（小笨还没说话）</span></div>
+    <div class="tutdesc" id="tutDesc"></div>
+  </div>
+  <div class="tcard">
+    <h3>🧩 工作区</h3>
+    <div id="tutWS"></div>
+  </div>
+  <div class="dock">
+    <div class="dlabel">零件盒 —— 点零件放进工作区</div>
+    <div class="tpacks" id="tutDock"><span style="color:var(--muted); font-size:13px;">还没有零件，听小笨的</span></div>
+    <button class="dockbtn" id="tutHintBtn">🆘 卡住了</button>
+    <button id="tutRun" data-tid="run">▶ 运行</button>
+  </div>
+</section>
 
-  <section id="builder" class="hidden">
-    <div class="cols">
-      <div class="col-left">
-        <div class="card" id="goalCard"></div>
-        <div class="card">
-          <h3>🧰 逻辑零件库 <span class="sub">点一下就能装</span></h3>
-          <div class="palette" id="palette"></div>
-        </div>
+<!-- ================= 自由工坊 ================= -->
+<section id="builder" class="hidden">
+  <div class="cols">
+    <div class="col-left">
+      <div class="card">
+        <h3>🎯 任务目标</h3>
+        <input id="goalInput" placeholder="一句话写下你要它做什么，比如：算出超过100的总价">
+        <div class="hintbox">先写出口，再写过程：<br>1️⃣ 它<b>什么时候停</b>？<br>2️⃣ 输入（数据）是什么？<br>3️⃣ 初始状态是什么？<br>4️⃣ 然后才动手拼零件。</div>
       </div>
-      <div class="col-mid">
-        <div class="card">
-          <h3>🔧 装配区 <span class="sub">从上到下依次执行</span></h3>
-          <div id="workspace"></div>
-          <div class="runbar">
-            <button class="btn primary" id="runBtn">▶ 运行</button>
-            <select id="speedSel">
-              <option value="700">慢速看清楚</option>
-              <option value="300" selected>正常速度</option>
-              <option value="100">快速</option>
-              <option value="15">极速</option>
-            </select>
-            <button class="btn ghost" id="clearOutBtn">⏹ 清空结果</button>
-          </div>
-        </div>
+      <div class="card">
+        <h3>🧩 零件库 <span class="sub">点一下加到工作区</span></h3>
+        <div class="palette" id="palette"></div>
       </div>
-      <div class="col-right card">
-        <div class="tabs">
-          <button class="tab on" data-tab="exec">▶ 执行现场</button>
-          <button class="tab" data-tab="traj">👣 轨迹</button>
-          <button class="tab" data-tab="py">🐍 Python</button>
-          <button class="tab" data-tab="verdict">⚖️ 判定</button>
-        </div>
-        <div class="pane" id="tabPanes">
-          <div id="pane-exec" class="tabpane"><div class="ph">按下 ▶ 运行<br>这里会一步步显示：变量怎么变、条件成不成立、循环跑到第几圈、输出说了什么</div></div>
-          <div id="pane-traj" class="tabpane hidden"><div class="ph">还没有轨迹</div></div>
-          <div id="pane-py" class="tabpane hidden"><div class="ph">还没有生成代码</div></div>
-          <div id="pane-verdict" class="tabpane hidden"><div class="ph">还没有判定结果</div></div>
+      <div class="card">
+        <h3>📦 数据（变量）</h3>
+        <div id="varList"></div>
+        <div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
+          <button class="btn ghost" id="addVarBtn" style="font-size:12px; padding:5px 12px;">＋ 新建变量</button>
+          <button class="btn ghost" id="demoVarBtn" style="font-size:12px; padding:5px 12px;">载入示例数据</button>
         </div>
       </div>
     </div>
-  </section>
-</main>
+    <div class="col-mid">
+      <div class="card">
+        <h3>🏗️ 工作区（逻辑树）</h3>
+        <div id="workspace"></div>
+        <div class="runbar">
+          <button class="btn primary" id="runBtn">▶ 运行</button>
+          <select id="speedSel">
+            <option value="500">慢速看清</option>
+            <option value="300" selected>正常</option>
+            <option value="120">快进</option>
+            <option value="0">瞬移</option>
+          </select>
+          <button class="btn ghost" id="stopBtn">⏹ 停止</button>
+          <button class="btn ghost" id="clearBtn">清空</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="card">
+        <div class="tabs" id="rtTabs"></div>
+        <div class="pane" id="rtPane"></div>
+      </div>
+    </div>
+  </div>
+  <datalist id="varNames"></datalist>
+</section>
 
+<div id="spotOverlay" class="hidden"></div>
 <div id="toast"></div>
-<div id="modalWrap" class="hidden"><div class="mcard" id="modalCard"></div></div>
+<div id="modalWrap" class="hidden"></div>
 
 <script>
 /* ============================================================
-   逻辑工坊 —— 编程逻辑训练器
-   理念：先想清楚什么时候停（Stop Rule First）
-   五维判定：结构完整 / 能运行 / 能终止 / 逻辑正确 / 答案正确
+   数据定义：零件 · 运算符
    ============================================================ */
-
-const CATS = {
-  seq:  {name:'顺序零件', color:'#3b82f6'},
-  cond: {name:'条件零件', color:'#8b5cf6'},
-  loop: {name:'循环零件', color:'#ef4444'},
-  data: {name:'数据零件', color:'#10b981'}
-};
+const CATS = [
+  { id:'base',  name:'🧱 基础动作', packs:['say','set'] },
+  { id:'cond',  name:'🔀 判断',     packs:['if'] },
+  { id:'loop',  name:'🔄 循环',     packs:['while','for'] },
+  { id:'data',  name:'📦 数据包',   packs:['filter','count','sum','find'] },
+];
 const PACKS = {
-  set:    {cat:'seq',  name:'赋值',      icon:'📦', desc:'把一个值放进变量'},
-  print:  {cat:'seq',  name:'输出',      icon:'📣', desc:'把结果说出来'},
-  if:     {cat:'cond', name:'条件',      icon:'🔀', desc:'满足条件才做'},
-  for:    {cat:'loop', name:'for 循环',  icon:'🔁', desc:'把列表里每一个都过一遍'},
-  while:  {cat:'loop', name:'while 循环',icon:'♻️', desc:'一直做，直到出口（要先写出口！）'},
-  filter: {cat:'data', name:'筛选',      icon:'🔭', desc:'从列表里挑出满足条件的'},
-  find:   {cat:'data', name:'查找',      icon:'🔍', desc:'找到第一个满足条件的'},
-  count:  {cat:'data', name:'计数',      icon:'🔢', desc:'数一数有几个满足条件'},
-  sum:    {cat:'data', name:'累加',      icon:'🧮', desc:'把列表里的数加起来'}
+  say:   { icon:'📣', name:'说出来',   desc:'让小笨说一句话', kind:'print',  cc:'#3b82f6' },
+  set:   { icon:'📥', name:'放进盒子', desc:'把一个值放进变量', kind:'set',   cc:'#3b82f6' },
+  if:    { icon:'🔀', name:'分岔路',   desc:'条件成立走一边', kind:'if',     cc:'#8b5cf6' },
+  while: { icon:'🔄', name:'一直做',   desc:'直到出口条件成立', kind:'while', cc:'#ef4444' },
+  for:   { icon:'🔁', name:'逐个拿',   desc:'把名单挨个过一遍', kind:'for',  cc:'#ef4444' },
+  filter:{ icon:'🔍', name:'挑出来',   desc:'按条件筛选名单', kind:'filter', cc:'#10b981' },
+  count: { icon:'🔢', name:'数一数',   desc:'数满足条件的有几个', kind:'count', cc:'#10b981' },
+  sum:   { icon:'➕', name:'加起来',   desc:'把名单里的都加总', kind:'sum',  cc:'#10b981' },
+  find:  { icon:'🎯', name:'找一个',   desc:'找第一个满足的', kind:'find',   cc:'#10b981' },
 };
-const OPS = ['>','>=','<','<=','==','!=','包含','不包含'];
+const OPS = ['==','!=','>','<','>=','<='];
+const OP_HUMAN = { '==':'等于','!=':'不等于','>':'大于','<':'小于','>=':'大于或者等于','<=':'小于或者等于' };
+const KIND_ICON = { print:'📣', set:'📥', if:'🔀', while:'🔄', for:'🔁', filter:'🔍', count:'🔢', sum:'➕', find:'🎯' };
+const KIND_NAME  = { print:'说出来', set:'放进盒子', if:'分岔路', while:'一直做（直到）', for:'逐个拿', filter:'挑出来', count:'数一数', sum:'加起来', find:'找一个' };
 
-const LEVELS = [
-  {id:1, title:'第一声问候', icon:'👋', diff:1,
-   goal:'让电脑说出「开工大吉」这句话。',
-   data:{口令:'开工大吉'},
-   required:['print'],
-   expected:{mode:'exact', values:['开工大吉']},
-   hint:'方法一：先用「赋值」把口令存进变量，再用「输出」说出变量。方法二：直接输出字符串，记得字符串要带引号。'},
-  {id:2, title:'及格了吗', icon:'📝', diff:1,
-   goal:'分数是 72 分。大于等于 60 分就输出「及格」，否则输出「不及格」。',
-   data:{分数:72},
-   required:['if'],
-   expected:{mode:'exact', values:['及格']},
-   hint:'用「条件」零件：如果 分数 >= 60 → 输出「及格」。勾选「否则」→ 输出「不及格」。'},
-  {id:3, title:'数一数', icon:'🔢', diff:2,
-   goal:'成绩单里有 8 个分数，数一数有多少个及格（大于等于 60 分），输出个数。',
-   data:{成绩单:[55,90,47,88,61,73,59,82]},
-   required:['count'],
-   expected:{mode:'exact', values:['5']},
-   hint:'用「计数」零件：在 成绩单 里数 每一项 >= 60 的，结果放进 个数，最后输出 个数。'},
-  {id:4, title:'挑出来', icon:'🔭', diff:2,
-   goal:'从数字列表里挑出所有大于 5 的数，输出挑出来的整个列表。',
-   data:{数字列表:[3,8,15,22,7,10,4]},
-   required:['filter'],
-   expected:{mode:'exact', values:['8,15,22,7,10']},
-   hint:'用「筛选」零件：从 数字列表 里挑 每一项 > 5，放进 挑选结果，然后输出 挑选结果。'},
-  {id:5, title:'找到它', icon:'🔍', diff:2,
-   goal:'年龄表里找第一个成年的年龄（大于等于 18 岁），找到了就输出。',
-   data:{年龄表:[15,16,17,18,20,22]},
-   required:['find'],
-   expected:{mode:'exact', values:['18']},
-   hint:'用「查找」零件：在 年龄表 里找 每一项 >= 18，放进 找到的，然后输出 找到的。'},
-  {id:6, title:'算总收入', icon:'🧮', diff:2,
-   goal:'零花钱记录里是每天的结余，算出总和并输出。',
-   data:{零花钱:[25,40,15,30,60]},
-   required:['sum'],
-   expected:{mode:'exact', values:['170']},
-   hint:'用「累加」零件：把 零花钱 里的数累加进 总和，从 0 开始加，最后输出 总和。'},
-  {id:7, title:'人人有份', icon:'🎉', diff:3,
-   goal:'给同学名单里的每一个人输出一句「加油，某某」。',
-   data:{同学:['小明','小红','小刚']},
-   required:['for'],
-   expected:{mode:'exact', values:['加油，小明','加油，小红','加油，小刚']},
-   hint:'用「for 循环」：每个 同学 进来，在循环体里输出 \'加油，\'+同学。注意：字符串要带引号，加号能把两段文字拼起来。'},
-  {id:8, title:'倒数五秒', icon:'🚀', diff:3, soul:true,
-   goal:'倒计时从 5 开始，每个数输出一次，数到 0 就停。先想清楚：什么时候停？',
-   data:{倒计时:5},
-   required:['while'],
-   expected:{mode:'exact', values:['5','4','3','2','1']},
-   hint:'先写出口：倒计时 == 0 就停。循环体里做两件事：① 输出 倒计时；② 赋值：倒计时 = 倒计时 - 1。'},
-  {id:9, title:'综合挑战：大采购', icon:'🏆', diff:4,
-   goal:'价格表里只挑超过 100 元的商品，算出这些商品的总价并输出。',
-   data:{价格:[120,45,200,88,150,30]},
-   required:['filter','sum'],
-   expected:{mode:'exact', values:['470']},
-   hint:'两步走：先用「筛选」把 价格 里 每一项 > 100 的挑进 贵的；再用「累加」把 贵的 加进 总价；最后输出 总价。'}
+/* ============================================================
+   16 关剧本（Tutorial Engine 的数据层）
+   步骤类型：say / ask / unlock / click / slot / setup / run / py / fold / free / win
+   ============================================================ */
+const TUT = [
+
+{ id:0, icon:'🤖', title:'认识小笨', learn:'它是谁', scene:'plain', vars:{},
+  script:[
+    { t:'say', text:'你好呀！我是<b>小笨</b>，一台特别听话、但一点脑筋都不动的机器人。' },
+    { t:'say', text:'你说一步，我做一步。你要是不告诉我<b>什么时候停</b>，我就会一直做下去，做到天荒地老……' },
+    { t:'say', text:'不过别小看笨机器：你写得对，它就跑得分毫不差；你写得错，它就错得明明白白。<b>跟它讲逻辑，练的就是你自己的脑子。</b>' },
+    { t:'ask', text:'准备好了吗？第一件事——让它开口说话！', options:[{k:'出发！',ok:true}] },
+    { t:'win' }
+  ]},
+
+{ id:1, icon:'📣', title:'让它说话', learn:'说出来 = print', scene:'paper', vars:{},
+  script:[
+    { t:'say', text:'看，桌上有一张纸，写着<b>「开工大吉」</b>。咱们让小笨把这句话念出来。' },
+    { t:'unlock', packs:[
+        { id:'say', icon:'📣', label:'说出来', kind:'print', params:{expr:'"开工大吉"'} }
+      ], text:'这是你的第一个零件：<b>📣 说出来</b>。它已经照着纸条填好了内容。' },
+    { t:'click', pack:'say', text:'点一下零件盒里的 <b>📣 说出来</b>，把它放进工作区 👇' },
+    { t:'run', pass:function(r){ return r.output.length===1 && r.output[0]==='开工大吉'; },
+      good:'它照着纸条念出来了！🎉 这就是你人生第一个程序。' },
+    { t:'py', human:['📣 说出「开工大吉」'], code:'print("开工大吉")',
+      note:'在真正的编程语言 Python 里，「说出来」这个动作叫 <b>print</b>。以后你看到 print，就知道是让机器说话。' },
+    { t:'win' }
+  ]},
+
+{ id:2, icon:'📦', title:'会记东西的盒子', learn:'变量', scene:'box', vars:{},
+  script:[
+    { t:'say', text:'小笨记性不好，得给它一个<b>盒子</b>。放进盒子的东西，它就记得住，随叫随到。' },
+    { t:'say', text:'这个盒子贴着标签：<b>糖果数</b>。咱们往里面放个数字。' },
+    { t:'unlock', packs:[
+        { id:'set3', icon:'📥', label:'放进盒子：3', kind:'set', params:{var:'糖果数', expr:'3'} }
+      ], text:'零件<b>📥 放进盒子</b>：把 <b>3</b> 放进贴着「糖果数」标签的盒子里。' },
+    { t:'click', pack:'set3', text:'点它，放进工作区 👇' },
+    { t:'run', pass:function(r){ return r.state['糖果数']===3; },
+      good:'盒子里装上 3 了！小笨现在记得「糖果数 = 3」。' },
+    { t:'unlock', packs:[
+        { id:'saybox', icon:'📣', label:'说出：糖果数', kind:'print', params:{expr:'糖果数'} }
+      ], text:'再让它把盒子里的东西念出来。注意——这次填的不是「3」，而是<b>盒子的名字</b>，小笨自己去盒子里拿。' },
+    { t:'click', pack:'saybox', text:'点它 👇' },
+    { t:'run', pass:function(r){ return r.output.length===1 && r.output[0]===3; },
+      good:'它去盒子里瞄了一眼，念出了「3」。写名字、不写内容——这就是变量的用法。' },
+    { t:'py', human:['📥 把 3 放进「糖果数」','📣 说出 糖果数'], code:'糖果数 = 3\nprint(糖果数)',
+      note:'贴了标签的盒子，在 Python 里叫<b>变量</b>。左边放名字，右边放东西，一行搞定。' },
+    { t:'win' }
+  ]},
+
+{ id:3, icon:'🚶', title:'一步接一步', learn:'顺序执行', scene:'plain', vars:{},
+  script:[
+    { t:'say', text:'小笨做事是一格一格来的：<b>从上到下，一步做完才做下一步</b>。顺序换了，结果就变了。' },
+    { t:'unlock', packs:[
+        { id:'s1', icon:'📣', label:'说「先洗手」', kind:'print', params:{expr:'"先洗手"'} },
+        { id:'s2', icon:'📣', label:'说「再吃饭」', kind:'print', params:{expr:'"再吃饭"'} }
+      ], text:'两个零件：一个说「先洗手」，一个说「再吃饭」。<b>注意放的先后顺序。</b>' },
+    { t:'click', pack:'s1', text:'先放「先洗手」👇' },
+    { t:'click', pack:'s2', text:'再放「再吃饭」👇' },
+    { t:'run', pass:function(r){ return r.output.join('|')==='先洗手|再吃饭'; },
+      good:'两句都说了，顺序也对！' },
+    { t:'ask', text:'如果两句话<b>交换位置</b>，小笨会怎么说？', options:[
+        {k:'「再吃饭」在前，「先洗手」在后',ok:true},
+        {k:'和原来一模一样',ok:false}]},
+    { t:'say', text:'对。机器没有常识，它不会觉得「先洗手再吃饭」更合理——<b>你排什么顺序，它就照什么顺序来。</b>' },
+    { t:'win' }
+  ]},
+
+{ id:4, icon:'🚪', title:'岔路口', learn:'如果…就…', scene:'gate', vars:{身高:130},
+  script:[
+    { t:'say', text:'游乐园门口立着牌子：<b>身高 120 以上才能玩过山车</b>。门口站着一位小朋友。' },
+    { t:'ask', text:'小笨怎么知道该不该放行？', options:[
+        {k:'先看看身高，再决定走哪边',ok:true},
+        {k:'闭着眼睛直接放行',ok:false},
+        {k:'问小朋友想不想玩',ok:false}]},
+    { t:'unlock', packs:[
+        { id:'gateif', icon:'🚪', label:'如果身高够 120', kind:'if',
+          params:{cond:{left:'身高',op:'>=',right:'120'}},
+          body:[{kind:'print', params:{expr:'"可以玩！"'}}] }
+      ], text:'零件<b>🚪 如果…就…</b>：条件成立（身高<b>大于或者等于</b> 120），就做它里面装的事。' },
+    { t:'click', pack:'gateif', text:'点它，放到工作区 👇' },
+    { t:'run', pass:function(r){ return r.output[0]==='可以玩！'; },
+      good:'身高 130，大于或者等于 120——条件成立，小笨放行了！' },
+    { t:'py', human:['🚪 如果 身高 大于或者等于 120：','　→ 📣 说「可以玩！」'],
+      code:'if 身高 >= 120:\n    print("可以玩！")',
+      note:'「大于或者等于」在 Python 里写成 <b>&gt;=</b>，两个符号贴在一起。判断完加个冒号，里面做的事<b>缩进一格</b>——这就是「装在里面」。' },
+    { t:'win' }
+  ]},
+
+{ id:5, icon:'⚖️', title:'两条路都要铺', learn:'否则 = else', scene:'score', vars:{分数:55},
+  script:[
+    { t:'say', text:'这回换一位同学，考了 <b>55 分</b>，及格线还是 60。' },
+    { t:'say', text:'只铺「及格」那条路可不够——条件不成立的时候，小笨就得干站着。<b>另一条路也要铺上。</b>' },
+    { t:'unlock', packs:[
+        { id:'scoreif', icon:'⚖️', label:'及格？两条路都铺', kind:'if',
+          params:{cond:{left:'分数',op:'>=',right:'60'}, hasElse:true},
+          body:[{kind:'print', params:{expr:'"及格啦"'}}],
+          elseBody:[{kind:'print', params:{expr:'"下次加油"'}}] }
+      ], text:'<b>⚖️ 如果…否则…</b>：条件成立走第一条路，不成立走第二条路。' },
+    { t:'click', pack:'scoreif', text:'点它 👇' },
+    { t:'run', pass:function(r){ return r.output[0]==='下次加油'; },
+      good:'55 分不到 60，小笨稳稳走了「否则」那条路。' },
+    { t:'ask', text:'要是这位同学考了 <b>72 分</b>，会听到哪句话？', options:[
+        {k:'「及格啦」',ok:true},{k:'「下次加油」',ok:false}]},
+    { t:'py', human:['⚖️ 如果 分数 ≥ 60 → 及格啦','　　　　　　　否则　→ 下次加油'],
+      code:'if 分数 >= 60:\n    print("及格啦")\nelse:\n    print("下次加油")',
+      note:'「否则」就是 <b>else</b>。两条路永远只走一条——绝不会都走，也绝不会都不走。' },
+    { t:'win' }
+  ]},
+
+{ id:6, icon:'🚩', title:'走到红旗就停', learn:'重复 + 出口', scene:'map', vars:{已走步数:0},
+  script:[
+    { t:'say', text:'前面是一条跑道，尽头插着一面<b>🚩 红旗</b>。小笨站在起点，一步一格。' },
+    { t:'ask', text:'「往前走，到红旗就停」——哪部分是<b>要做的事</b>，哪部分是<b>停下的条件</b>？', options:[
+        {k:'做事=往前走，停=到红旗',ok:true},
+        {k:'做事=到红旗，停=往前走',ok:false},
+        {k:'没有条件，一直走',ok:false}]},
+    { t:'unlock', packs:[
+        { id:'walkloop', icon:'🔄', label:'一直走，到旗就停', kind:'while',
+          params:{stop:{left:'已走步数',op:'==',right:'5'}},
+          body:[{kind:'set', params:{var:'已走步数', expr:'已走步数 + 1'}}] }
+      ], text:'<b>🔄 一直做，直到…</b>：红卡片里写的是<b>出口</b>——「已走步数 == 5」的那一刻，就地停下。身体里装的是「走一步」。' },
+    { t:'click', pack:'walkloop', text:'点它，放到工作区 👇' },
+    { t:'run', pass:function(r){ return r.state['已走步数']===5; },
+      good:'一步，一步……到红旗，停！', walkoff:true },
+    { t:'say', text:'记住这种感觉：<b>每个循环都必须有一个出口。</b>写循环之前，先想清楚「什么时候停」——这就是本工坊的灵魂法则。' },
+    { t:'py', human:['🔄 一直做（走一步）','🛑 出口：已走步数 == 5'],
+      code:'# 出口：当 已走步数 == 5 时停\nwhile not (已走步数 == 5):\n    已走步数 = 已走步数 + 1',
+      note:'Python 里的 <b>while</b> 就是「一直做」。第一行注释是出口——真正的 Python 写「当条件成立时继续」，我们翻译成「什么时候停」，更贴近你的想法。' },
+    { t:'win' }
+  ]},
+
+{ id:7, icon:'🚀', title:'火箭倒计时', learn:'自己搭一个循环', scene:'rocket', vars:{倒计时:5},
+  script:[
+    { t:'say', text:'发射火箭前要倒数：<b>5、4、3、2、1</b>。这种活儿最适合循环干。' },
+    { t:'say', text:'盒子里已经装好<b>倒计时 = 5</b>。计划是：只要还没数到 0，就报一次数，然后减 1。' },
+    { t:'unlock', packs:[
+        { id:'loop', icon:'🔄', label:'循环（数到 0 停）', kind:'while', params:{stop:{left:'倒计时',op:'==',right:'0'}} },
+        { id:'saycd', icon:'📣', label:'报数：说出倒计时', kind:'print', params:{expr:'倒计时'} },
+        { id:'minus', icon:'➖', label:'倒计时减 1', kind:'set', params:{var:'倒计时', expr:'倒计时 - 1'} }
+      ], text:'三个零件：<b>🔄 循环</b>（出口已填好：数到 0）、<b>📣 报数</b>、<b>➖ 减 1</b>。这回由你来组装。' },
+    { t:'click', pack:'loop', text:'先把<b>循环</b>放进工作区 👇' },
+    { t:'slot', text:'循环的<b>身体</b>还空着。点一下里面的虚线框，告诉小笨往哪儿放 👇' },
+    { t:'click', pack:'saycd', text:'好，把「报数」放进去 👇' },
+    { t:'slot', text:'再放一个「减 1」，不然倒数永远不动 👇' },
+    { t:'click', pack:'minus', text:'把「减 1」也放进去 👇' },
+    { t:'run', pass:function(r){ return r.output.join('')==='54321' && !r.dead; },
+      good:'5 —— 4 —— 3 —— 2 —— 1 —— 发射！🚀' },
+    { t:'py', human:['🔄 直到 倒计时 == 0：','　→ 📣 报数','　→ ➖ 减 1'],
+      code:'# 出口：当 倒计时 == 0 时停\nwhile not (倒计时 == 0):\n    print(倒计时)\n    倒计时 = 倒计时 - 1',
+      note:'整个关卡就是这五行。你已经<b>亲手</b>写出人生第一个真正的循环——不是点一下就好的那种。' },
+    { t:'win' }
+  ]},
+
+{ id:8, icon:'😵', title:'永远的 5', learn:'死循环', scene:'rocket', vars:{倒计时:5},
+  script:[
+    { t:'say', text:'有人给小笨写了个倒计时，结果它不停念「5」……念了<b>八百次</b>。咱们看看它写了什么。' },
+    { t:'setup', blocks:[
+        { kind:'while', params:{stop:{left:'倒计时',op:'==',right:'10'}},
+          body:[ {kind:'print', params:{expr:'倒计时'}},
+                 {kind:'set', params:{var:'倒计时', expr:'倒计时 - 1'}} ] }
+      ], text:'出口写的是「<b>数到 10</b>」。先别运行，用眼睛读一遍这个循环。' },
+    { t:'ask', text:'倒计时从 5 开始往下掉：5→4→3→2→1→0→-1……这个循环停得下来吗？', options:[
+        {k:'停不下来，永远不会到 10',ok:true},
+        {k:'停得下来，到 0 就停',ok:false},
+        {k:'停得下来，念 10 次就停',ok:false}]},
+    { t:'run', pass:function(r){ return r.dead===true; }, dead:true,
+      good:'😵 果然停不下来！小笨念到第 3000 步，被工坊的安全绳拦住了。这就是<b>死循环</b>。' },
+    { t:'say', text:'程序语法没写错，只是<b>出口永远到不了</b>。来修它。' },
+    { t:'ask', text:'出口应该改成什么？', options:[
+        {k:'倒计时 == 0',ok:true,fix:{stop:{left:'倒计时',op:'==',right:'0'}}},
+        {k:'倒计时 == 5',ok:false},
+        {k:'倒计时 == 3000',ok:false}]},
+    { t:'run', pass:function(r){ return r.output.join('')==='54321' && !r.dead; },
+      good:'修好了！出口对了，循环自然就停了。' },
+    { t:'say', text:'以后每次写循环，先问自己一句：<b>这个出口，真的到得了吗？</b>' },
+    { t:'win' }
+  ]},
+
+{ id:9, icon:'🍬', title:'给每个人发糖', learn:'逐个拿 = for', scene:'kids', vars:{同学:['小明','小红','小刚']},
+  script:[
+    { t:'say', text:'班里三位同学：<b>小明、小红、小刚</b>。每人发一颗糖，还要喊出名字。' },
+    { t:'ask', text:'给三个人各喊一句「加油，某某」——最省事的办法是？', options:[
+        {k:'拿名单，挨个念，每念一个做一次',ok:true},
+        {k:'把「喊一句话」写三遍',ok:false}]},
+    { t:'unlock', packs:[
+        { id:'candyloop', icon:'🍬', label:'按名单挨个来', kind:'for', params:{list:'同学', item:'每一个'} },
+        { id:'saycheer', icon:'📣', label:'喊：加油，＋名字', kind:'print', params:{expr:'"加油，" + 每一个'} }
+      ], text:'<b>🍬 逐个拿</b>：小笨捧着名单，每拿一个名字就放进「每一个」这个盒子，然后做身体里的事。拿完为止。' },
+    { t:'click', pack:'candyloop', text:'先把「逐个拿」放进工作区 👇' },
+    { t:'slot', text:'往它的身体里放「喊话」👇' },
+    { t:'click', pack:'saycheer', text:'把「喊话」放进身体里 👇' },
+    { t:'run', pass:function(r){ return r.output.length===3 && r.output[2]==='加油，小刚'; },
+      good:'三声加油，一个不落！' },
+    { t:'py', human:['🍬 对 同学 里的 每一个：','　→ 📣 喊「加油，＋名字」'],
+      code:'for 每一个 in 同学:\n    print("加油，" + 每一个)',
+      note:'Python 的 <b>for</b> 就是「按名单挨个来」。零件你只写一遍，它替你跑三遍——这就是循环的威力。' },
+    { t:'win' }
+  ]},
+
+{ id:10, icon:'📊', title:'数数及格的人', learn:'循环里放判断', scene:'scores', vars:{成绩单:[55,90,47,88,61,73,59,82], 及格人数:0},
+  script:[
+    { t:'say', text:'一张成绩单：<b>55 90 47 88 61 73 59 82</b>，一共 8 份。咱们数数几个人及格。' },
+    { t:'say', text:'笨办法是人肉一个个看。好办法是：让小笨<b>拿着成绩挨个过，遇到及格的，就往计数盒里加 1</b>。' },
+    { t:'unlock', packs:[
+        { id:'sloop', icon:'📊', label:'拿成绩单挨个看', kind:'for', params:{list:'成绩单', item:'每一项'} },
+        { id:'passif', icon:'🚪', label:'如果及格：＋1', kind:'if',
+          params:{cond:{left:'每一项',op:'>=',right:'60'}},
+          body:[{kind:'set', params:{var:'及格人数', expr:'及格人数 + 1'}}] }
+      ], text:'两个零件：<b>📊 挨个看</b> ＋ <b>🚪 及格就 +1</b>（门里已经装好了加一的动作）。计数盒「及格人数」已经从 0 摆好了。' },
+    { t:'click', pack:'sloop', text:'先放「挨个看」👇' },
+    { t:'slot', text:'往它身体里放「及格就 +1」的门 👇' },
+    { t:'click', pack:'passif', text:'把门放进循环身体里 👇' },
+    { t:'run', pass:function(r){ return r.state['及格人数']===5; },
+      good:'8 份成绩，5 个人及格——一个不差！' },
+    { t:'py', human:['📊 对 每一项：','　→ 🚪 如果 ≥ 60：及格人数＋1'],
+      code:'及格人数 = 0\nfor 每一项 in 成绩单:\n    if 每一项 >= 60:\n        及格人数 = 及格人数 + 1',
+      note:'「循环里放判断」——这就是你以后天天要写的组合拳。特别看这行：<b>及格人数 = 及格人数 + 1</b>，意思是「盒子里的数加一，再放回盒子」。' },
+    { t:'win' }
+  ]},
+
+{ id:11, icon:'🔢', title:'有人替你数好了', learn:'封装 = count', scene:'scores', vars:{成绩单:[55,90,47,88,61,73,59,82]},
+  script:[
+    { t:'say', text:'上一关那套「挨个看 + 及格加一」，是不是写起来有点啰嗦？好消息：<b>有人把它打包成了一个零件。</b>' },
+    { t:'fold', big:'🔢', name:'数一数',
+      chain:'📋 拿成绩单挨个看<br>🚪 及格吗？→ ✋ 计数 +1<br>📦 装进「个数」盒子' },
+    { t:'unlock', packs:[
+        { id:'cnt', icon:'🔢', label:'数一数：及格的个数', kind:'count',
+          params:{list:'成绩单',item:'每一项',cond:{left:'每一项',op:'>=',right:'60'},out:'个数'} }
+      ], text:'一个零件顶上关一整套。这就是<b>封装</b>：把常用的一串步骤打包、贴标签、下次直接拿。' },
+    { t:'click', pack:'cnt', text:'点它 👇' },
+    { t:'run', pass:function(r){ return r.state['个数']===5; },
+      good:'一个零件，同样数出 5。' },
+    { t:'py', human:['🔢 数一数：成绩单里 ≥60 的个数'],
+      code:'个数 = 0\nfor 每一项 in 成绩单:\n    if 每一项 >= 60:\n        个数 = 个数 + 1\n# —— 也可以一行搞定：\n个数 = sum(1 for 每一项 in 成绩单 if 每一项 >= 60)',
+      note:'Python 里管这叫<b>推导式</b>。看不懂没关系——你只需要知道：最后一行展开来，就是上面四行。' },
+    { t:'win' }
+  ]},
+
+{ id:12, icon:'🔍', title:'把贵的挑出来', learn:'筛选 = filter', scene:'prices', vars:{价格:[120,45,200,88,150,30]},
+  script:[
+    { t:'say', text:'购物车里六件东西：<b>120 45 200 88 150 30</b>。把超过 100 的挑出来。' },
+    { t:'unlock', packs:[
+        { id:'flt', icon:'🔍', label:'挑出 &gt;100 的', kind:'filter',
+          params:{list:'价格',item:'每一项',cond:{left:'每一项',op:'>',right:'100'},out:'贵的'} }
+      ], text:'<b>🔍 挑出来</b>：按名单挨个看，符合条件的留下，装进一个新盒子。' },
+    { t:'click', pack:'flt', text:'点它 👇' },
+    { t:'run', pass:function(r){ return Array.isArray(r.state['贵的']) && r.state['贵的'].length===3; },
+      good:'120、200、150——三件贵的被挑出来了。' },
+    { t:'py', human:['🔍 挑出 价格 里 &gt;100 的'],
+      code:'贵的 = [每一项 for 每一项 in 价格 if 每一项 > 100]',
+      note:'一个零件拆开来，还是「挨个看 + 判断 + 收进新盒子」那一套。你现在能看穿它了。' },
+    { t:'win' }
+  ]},
+
+{ id:13, icon:'🎯', title:'找到第一个就收手', learn:'查找 + 提前停', scene:'ages', vars:{年龄表:[15,16,17,18,20,22]},
+  script:[
+    { t:'say', text:'年龄表：<b>15 16 17 18 20 22</b>。找到<b>第一个</b>成年人的年龄。' },
+    { t:'ask', text:'找到 18 之后，还需要继续往后看 20 和 22 吗？', options:[
+        {k:'不用，找到就该停，省时间',ok:true},
+        {k:'要，看完才放心',ok:false}]},
+    { t:'unlock', packs:[
+        { id:'fnd', icon:'🎯', label:'找第一个 ≥18 的', kind:'find',
+          params:{list:'年龄表',item:'每一项',cond:{left:'每一项',op:'>=',right:'18'},out:'找到的'} }
+      ], text:'<b>🎯 找一个</b>：挨个看，遇到第一个符合的就收手、装盒、结束。' },
+    { t:'click', pack:'fnd', text:'点它 👇' },
+    { t:'run', pass:function(r){ return r.state['找到的']===18; },
+      good:'15 不行、16 不行、17 不行、18——就是它！后面两个根本没看。' },
+    { t:'py', human:['🎯 找第一个 ≥18 的'],
+      code:'for 每一项 in 年龄表:\n    if 每一项 >= 18:\n        找到的 = 每一项\n        break',
+      note:'那个 <b>break</b> 就是「收手」——提前跳出循环。会收手的循环，才是好循环。' },
+    { t:'win' }
+  ]},
+
+{ id:14, icon:'➕', title:'加到一起', learn:'累加 = sum', scene:'prices', vars:{价格:[120,45,200,88,150,30], 贵的:[120,200,150]},
+  script:[
+    { t:'say', text:'上上关挑出来的三件贵的——<b>120 200 150</b>——总共多少钱？' },
+    { t:'unlock', packs:[
+        { id:'sm', icon:'➕', label:'把「贵的」加起来', kind:'sum',
+          params:{list:'贵的',item:'每一项',out:'总价',start:'0'} }
+      ], text:'<b>➕ 加起来</b>：从 0 开始，挨个往盒子里加。' },
+    { t:'click', pack:'sm', text:'点它 👇' },
+    { t:'run', pass:function(r){ return r.state['总价']===470; },
+      good:'470！挑出来再加起来——这就是一条完整的数据流水线。' },
+    { t:'py', human:['➕ 把 贵的 加起来，从 0 开始'],
+      code:'总价 = 0\nfor 每一项 in 贵的:\n    总价 = 总价 + 每一项',
+      note:'「从 0 开始」很重要：换个起点，结果就不一样了。' },
+    { t:'win' }
+  ]},
+
+{ id:15, icon:'🎓', title:'毕业挑战', learn:'自由组装', scene:'prices', vars:{价格:[120,45,200,88,150,30]},
+  script:[
+    { t:'say', text:'最后一关，<b>不给现成的零件了——你自己搭。</b>' },
+    { t:'say', text:'任务：从 6 件价格里<b>挑出超过 100 的</b>，<b>加起来</b>，最后<b>说出总价</b>。零件都在下面，随便用。' },
+    { t:'free',
+      pass:function(r){ return r.output.length===1 && r.output[0]===470; },
+      good:'总价 <b>470</b>，一个不差——这就是你亲手搭出来的第一个完整程序！🎉',
+      packs:[
+        { id:'fflt', icon:'🔍', label:'挑出 &gt;100 的', kind:'filter',
+          params:{list:'价格',item:'每一项',cond:{left:'每一项',op:'>',right:'100'},out:'贵的'} },
+        { id:'fsum', icon:'➕', label:'加起来 → 总价', kind:'sum',
+          params:{list:'贵的',item:'每一项',out:'总价',start:'0'} },
+        { id:'fsay', icon:'📣', label:'说出总价', kind:'print', params:{expr:'总价'} }
+      ],
+      auto:'assembleFinal',
+      hint1:'三步走：先 🔍 挑出 &gt;100 的，再 ➕ 加起来，最后 📣 说出「总价」。按这个顺序放零件。',
+      hint2:'零件盒里的三个零件，从左到右按顺序点：🔍 → ➕ → 📣。' },
+    { t:'win', final:true }
+  ]}
 ];
 
-/* ---------- 全局状态 ---------- */
+/* ============================================================
+   全局状态 · 存档
+   ============================================================ */
 let uid = 0;
-const S = {
-  screen:'home',      // home | builder
-  level:null,         // 当前关卡（自由模式为 null）
-  blocks:[],
-  vars:{},
-  goal:'',            // 自由模式的目标
-  varRows:[],         // 自由模式变量编辑行
-  trace:null, playIdx:-1, timer:null, playing:false, verdict:null
-};
+const S = { vars:{}, blocks:[], goal:'', playing:false };
+const T = { li:0, level:null, si:0, packs:{}, want:null, dest:'top', hintTier:0,
+            busy:false, playing:false, timer:null, curRun:null };
+const SAVE = { xp:0, tut:{}, free:null };
 
-function loadSave(){ try{ return JSON.parse(localStorage.getItem('logicForgeSave')||'{}'); }catch(e){ return {}; } }
-let SAVE = loadSave();
-if(!SAVE.xp) SAVE.xp = 0;
-if(!SAVE.levels) SAVE.levels = {};
-function persist(){ try{ localStorage.setItem('logicForgeSave', JSON.stringify(SAVE)); }catch(e){} }
-
-/* ---------- 小工具 ---------- */
-const q = s => document.querySelector(s);
-const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const snap = o => JSON.parse(JSON.stringify(o));
-function fmt(v){
-  if(v===null) return '未找到';
-  if(v===undefined) return '空';
-  if(Array.isArray(v)) return '[' + v.map(fmt).join(', ') + ']';
-  if(typeof v==='string') return v;
-  return String(v);
-}
-function norm(v){
-  if(v===null) return '未找到';
-  if(v===undefined) return '空';
-  if(Array.isArray(v)) return v.map(norm).join(',');
-  return String(v);
-}
-let toastTimer=null;
-function toast(msg){
-  const t=q('#toast'); t.textContent=msg; t.classList.add('show');
-  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2600);
-}
-function openModal(html){ q('#modalCard').innerHTML=html; q('#modalWrap').classList.remove('hidden'); }
-function closeModal(){ q('#modalWrap').classList.add('hidden'); }
-q('#modalWrap').addEventListener('click', e=>{ if(e.target.id==='modalWrap') closeModal(); });
-
-/* ---------- 表达式求值（安全迷你版） ---------- */
-const BADWORDS = /\b(constructor|prototype|__proto__|window|document|globalThis|fetch|Function|eval|alert|localStorage|XMLHttpRequest|import|require|location|self|parent|top)\b/i;
-function evalExpr(expr, env){
-  if(expr===undefined||expr===null) return expr;
-  const e = String(expr).trim();
-  if(e==='') return undefined;
-  /* 友好兜底：输入的是一个纯词（不是数字、没带引号、也不是已定义的变量）→ 直接当文字 */
-  const isWord = /^[\u4e00-\u9fa5\w]+$/.test(e);
-  if(isWord && isNaN(Number(e)) && !Object.prototype.hasOwnProperty.call(env, e)){
-    return e;
-  }
-  if(!/^[\w\s+\-*/%().,'"：，。！？、\u3000-\u303f\u4e00-\u9fa5\uff00-\uffef]*$/.test(e))
-    throw new Error('表达式「'+e+'」里有不认识的符号');
-  if(BADWORDS.test(e)) throw new Error('表达式「'+e+'」里用了不允许的词');
+function loadSave(){
   try{
-    const f = new Function('__env','with(__env){ return ('+e+'); }');
-    return f(env);
-  }catch(err){
-    throw new Error('表达式「'+e+'」算不出来：变量是不是还没定义？');
-  }
+    const raw = (typeof localStorage!=='undefined') ? localStorage.getItem('logicForgeSave') : null;
+    if(raw){ const d = JSON.parse(raw); if(d && typeof d==='object') Object.assign(SAVE, d); }
+  }catch(e){}
 }
-function evalCond(c, env){
-  const l = evalExpr(c.left, env), r = evalExpr(c.right, env);
-  switch(c.op){
-    case '>':  return l >  r;
-    case '>=': return l >= r;
-    case '<':  return l <  r;
-    case '<=': return l <= r;
-    case '==': return l == r;
-    case '!=': return l != r;
-    case '包含':   return Array.isArray(l) ? l.some(x=>x==r) : String(l).includes(r);
-    case '不包含': return !(Array.isArray(l) ? l.some(x=>x==r) : String(l).includes(r));
-  }
-  return false;
-}
-function condDesc(c){
-  if(!c) return '？';
-  return (c.left||'？') + ' ' + (c.op||'？') + ' ' + (c.right||'？');
-}
-function condFilled(c){ return !!(c && String(c.left).trim() && String(c.right).trim()); }
-function negateOp(op){
-  return {'==':'!=','!=':'==','>':'<=','<':'>','>=':'<','<=':'>=','包含':'不包含','不包含':'包含'}[op] || '!=';
-}
-
-/* ---------- 零件工厂 ---------- */
-function newBlock(kind){
-  const b = {id:++uid, kind, params:{}, body:null, elseBody:null};
-  switch(kind){
-    case 'set':    b.params={var:'新变量', expr:'0'}; break;
-    case 'print':  b.params={expr:''}; break;
-    case 'if':     b.params={cond:{left:'',op:'>',right:''}, hasElse:false}; b.body=[]; b.elseBody=[]; break;
-    case 'for':    b.params={list:'', item:'每一项'}; b.body=[]; break;
-    case 'while':  b.params={stop:{left:'',op:'==',right:''}}; b.body=[]; break;
-    case 'filter': b.params={list:'',item:'每一项',cond:{left:'',op:'>',right:''},out:'挑选结果'}; break;
-    case 'find':   b.params={list:'',item:'每一项',cond:{left:'',op:'>',right:''},out:'找到的'}; break;
-    case 'count':  b.params={list:'',item:'每一项',cond:{left:'',op:'>',right:''},out:'个数'}; break;
-    case 'sum':    b.params={list:'',item:'每一项',out:'总和',start:'0'}; break;
-  }
-  return b;
-}
-function smartNew(kind){
-  const b = newBlock(kind);
-  const arrays = Object.keys(S.vars).filter(k=>Array.isArray(S.vars[k]));
-  const first = arrays[0] || '';
-  if(kind==='for') b.params.list = first;
-  if(['filter','find','count','sum'].includes(kind)){
-    b.params.list = first;
-    if(b.params.cond) b.params.cond.left = b.params.item;
-  }
-  return b;
-}
-function findBlock(list, id){
-  for(const b of list){
-    if(b.id===id) return b;
-    for(const key of ['body','elseBody']){
-      if(b[key]){ const r=findBlock(b[key],id); if(r) return r; }
-    }
-  }
-  return null;
-}
-function findOwner(list, id){
-  for(let i=0;i<list.length;i++){
-    if(list[i].id===id) return {list, index:i};
-    for(const key of ['body','elseBody']){
-      if(list[i][key]){ const r=findOwner(list[i][key],id); if(r) return r; }
-    }
-  }
-  return null;
-}
-function allKinds(list, set){
-  set = set || new Set();
-  list.forEach(b=>{ set.add(b.kind); if(b.body) allKinds(b.body,set); if(b.elseBody) allKinds(b.elseBody,set); });
-  return set;
-}
-
-/* ---------- 执行引擎 ---------- */
-function pushStep(ctx, desc, blockId){
-  ctx.n++;
-  if(ctx.n > 3000){
-    ctx.dead = true;
-    throw new Error('死循环警报：跑了 3000 多步还没停下来——出口条件是不是写错了？');
-  }
-  ctx.steps.push({desc, blockId:blockId||null, vars:snap(ctx.state), output:ctx.output.slice()});
-}
-function execList(list, ctx){ for(const b of list) execBlock(b, ctx); }
-function execBlock(b, ctx){
-  const P = b.params;
-  switch(b.kind){
-    case 'set': {
-      if(!String(P.var||'').trim()) throw new Error('有个「赋值」零件没填变量名');
-      if(!String(P.expr||'').trim()) throw new Error('「赋值」零件还没填要放进去的值');
-      const v = evalExpr(P.expr, ctx.state);
-      ctx.state[P.var.trim()] = v;
-      pushStep(ctx, '📦 赋值：' + P.var + ' = ' + fmt(v), b.id);
-      break;
-    }
-    case 'print': {
-      if(!String(P.expr||'').trim()) throw new Error('有个「输出」零件还没填要输出什么');
-      const v = evalExpr(P.expr, ctx.state);
-      ctx.output.push(v);
-      pushStep(ctx, '📣 输出：' + fmt(v), b.id);
-      break;
-    }
-    case 'if': {
-      if(!condFilled(P.cond)) throw new Error('有个「条件」零件的条件还没填完整');
-      const ok = evalCond(P.cond, ctx.state);
-      pushStep(ctx, '🔀 判断：' + condDesc(P.cond) + ' → ' + (ok ? '成立，走「就做」' : '不成立' + (P.hasElse?'，走「否则」':'，跳过')), b.id);
-      if(ok) execList(b.body, ctx);
-      else if(P.hasElse) execList(b.elseBody, ctx);
-      break;
-    }
-    case 'for': {
-      if(!P.list) throw new Error('有个「for 循环」还没选要遍历的列表');
-      const arr = ctx.state[P.list];
-      if(!Array.isArray(arr)) throw new Error('「for 循环」想遍历的 ' + P.list + ' 不是列表');
-      pushStep(ctx, '🔁 开始遍历 ' + P.list + '（共 ' + arr.length + ' 项）', b.id);
-      const copy = arr.slice();
-      for(const item of copy){
-        ctx.state[P.item] = item;
-        pushStep(ctx, '🔁 这一轮：' + P.item + ' = ' + fmt(item), b.id);
-        execList(b.body, ctx);
-      }
-      pushStep(ctx, '🔁 ' + P.list + ' 遍历完毕', b.id);
-      break;
-    }
-    case 'while': {
-      if(!condFilled(P.stop)) throw new Error('这个循环还没写出口——先想清楚什么时候停！');
-      let round = 0;
-      while(true){
-        const stop = evalCond(P.stop, ctx.state);
-        pushStep(ctx, '🛑 第 ' + (round+1) + ' 次检查出口：' + condDesc(P.stop) + ' → ' + (stop ? '✅ 条件到了，停下！' : '还没到，继续循环'), b.id);
-        if(stop) break;
-        round++;
-        execList(b.body, ctx);
-      }
-      break;
-    }
-    case 'filter': {
-      checkDataBlock(b, ctx);
-      const out = [];
-      pushStep(ctx, '🔭 开始筛选：逐个检查 ' + P.list, b.id);
-      for(const it of ctx.state[P.list]){
-        ctx.state[P.item] = it;
-        const ok = evalCond(P.cond, ctx.state);
-        pushStep(ctx, '🔭 检查 ' + P.item + ' = ' + fmt(it) + '：' + condDesc(P.cond) + ' → ' + (ok ? '✅ 满足，放进 ' + P.out : '不满足，跳过'), b.id);
-        if(ok) out.push(it);
-      }
-      ctx.state[P.out] = out;
-      pushStep(ctx, '🔭 筛选完成：' + P.out + ' = ' + fmt(out), b.id);
-      break;
-    }
-    case 'find': {
-      checkDataBlock(b, ctx);
-      let found = null, hit = false;
-      pushStep(ctx, '🔍 开始查找：逐个检查 ' + P.list, b.id);
-      for(const it of ctx.state[P.list]){
-        ctx.state[P.item] = it;
-        const ok = evalCond(P.cond, ctx.state);
-        pushStep(ctx, '🔍 检查 ' + P.item + ' = ' + fmt(it) + '：' + condDesc(P.cond) + ' → ' + (ok ? '✅ 找到了！' : '不是它，继续'), b.id);
-        if(ok){ found = it; hit = true; break; }
-      }
-      ctx.state[P.out] = found;
-      pushStep(ctx, '🔍 查找完成：' + P.out + ' = ' + (hit ? fmt(found) : '没找到（空）'), b.id);
-      break;
-    }
-    case 'count': {
-      checkDataBlock(b, ctx);
-      let c = 0;
-      pushStep(ctx, '🔢 开始计数：逐个检查 ' + P.list, b.id);
-      for(const it of ctx.state[P.list]){
-        ctx.state[P.item] = it;
-        const ok = evalCond(P.cond, ctx.state);
-        pushStep(ctx, '🔢 检查 ' + P.item + ' = ' + fmt(it) + '：' + condDesc(P.cond) + ' → ' + (ok ? '✅ 算一个' : '不算'), b.id);
-        if(ok) c++;
-      }
-      ctx.state[P.out] = c;
-      pushStep(ctx, '🔢 计数完成：' + P.out + ' = ' + c, b.id);
-      break;
-    }
-    case 'sum': {
-      checkDataBlock(b, ctx);
-      let acc = evalExpr(String(P.start||'0').trim() || '0', ctx.state);
-      if(typeof acc !== 'number' || isNaN(acc)) acc = 0;
-      pushStep(ctx, '🧮 开始累加 ' + P.list + '，起点 ' + fmt(acc), b.id);
-      for(const it of ctx.state[P.list]){
-        ctx.state[P.item] = it;
-        const before = acc;
-        if(typeof it === 'number') acc = acc + it;
-        pushStep(ctx, '🧮 累加：' + P.out + ' = ' + fmt(before) + ' + ' + fmt(it) + ' → ' + fmt(acc), b.id);
-      }
-      ctx.state[P.out] = acc;
-      pushStep(ctx, '🧮 累加完成：' + P.out + ' = ' + fmt(acc), b.id);
-      break;
-    }
-  }
-}
-function checkDataBlock(b, ctx){
-  const P = b.params;
-  if(!P.list) throw new Error('「' + PACKS[b.kind].name + '」还没选数据来源');
-  if(!Array.isArray(ctx.state[P.list])) throw new Error('「' + PACKS[b.kind].name + '」的数据来源 ' + P.list + ' 不是列表');
-  if(!String(P.item||'').trim()) throw new Error('「' + PACKS[b.kind].name + '」还没给每一项起名字');
-  if(!String(P.out||'').trim()) throw new Error('「' + PACKS[b.kind].name + '」还没填结果变量名');
-  if(b.params.cond && !condFilled(b.params.cond)) throw new Error('「' + PACKS[b.kind].name + '」的条件还没填完整');
-}
-function runProgram(){
-  const ctx = {state:snap(S.vars), steps:[], output:[], n:0, dead:false, error:null};
+function persist(){
   try{
-    execList(S.blocks, ctx);
-  }catch(e){
-    ctx.error = (e instanceof Error) ? e : new Error(String(e));
-    ctx.steps.push({desc:'💥 出错了：' + ctx.error.message, blockId:null, vars:snap(ctx.state), output:ctx.output.slice()});
-  }
-  ctx.usedKinds = allKinds(S.blocks);
-  return ctx;
-}
-
-/* ---------- Python 代码生成 ---------- */
-function pyCond(c){
-  if(c.op==='包含')   return c.right + ' in ' + c.left;
-  if(c.op==='不包含') return c.right + ' not in ' + c.left;
-  return c.left + ' ' + c.op + ' ' + c.right;
-}
-function pyNegateStop(s){
-  if(s.op==='包含')   return 'not (' + s.right + ' in ' + s.left + ')';
-  if(s.op==='不包含') return '(' + s.right + ' in ' + s.left + ')';
-  return s.left + ' ' + negateOp(s.op) + ' ' + s.right;
-}
-const pi = (ind, text) => '    '.repeat(ind) + text;
-function genList(blocks, ind){
-  let out = [];
-  for(const b of blocks){
-    const P = b.params;
-    switch(b.kind){
-      case 'set':   out.push(pi(ind, P.var + ' = ' + P.expr)); break;
-      case 'print': out.push(pi(ind, 'print(' + P.expr + ')')); break;
-      case 'if':
-        out.push(pi(ind, 'if ' + pyCond(P.cond) + ':'));
-        out = out.concat(genList(b.body, ind+1));
-        if(P.hasElse){ out.push(pi(ind, 'else:')); out = out.concat(genList(b.elseBody, ind+1)); }
-        break;
-      case 'for':
-        out.push(pi(ind, 'for ' + P.item + ' in ' + P.list + ':'));
-        out = out.concat(genList(b.body, ind+1));
-        break;
-      case 'while': {
-        const s = P.stop;
-        out.push(pi(ind, '# 出口：当 ' + condDesc(s) + ' 时停下'));
-        out.push(pi(ind, 'while ' + pyNegateStop(s) + ':'));
-        out = out.concat(genList(b.body, ind+1));
-        break;
-      }
-      case 'filter':
-        out.push(pi(ind, P.out + ' = []'));
-        out.push(pi(ind, 'for ' + P.item + ' in ' + P.list + ':'));
-        out.push(pi(ind+1, 'if ' + pyCond(P.cond) + ':'));
-        out.push(pi(ind+2, P.out + '.append(' + P.item + ')'));
-        break;
-      case 'find':
-        out.push(pi(ind, P.out + ' = None'));
-        out.push(pi(ind, 'for ' + P.item + ' in ' + P.list + ':'));
-        out.push(pi(ind+1, 'if ' + pyCond(P.cond) + ':'));
-        out.push(pi(ind+2, P.out + ' = ' + P.item));
-        out.push(pi(ind+2, 'break'));
-        break;
-      case 'count':
-        out.push(pi(ind, P.out + ' = 0'));
-        out.push(pi(ind, 'for ' + P.item + ' in ' + P.list + ':'));
-        out.push(pi(ind+1, 'if ' + pyCond(P.cond) + ':'));
-        out.push(pi(ind+2, P.out + ' = ' + P.out + ' + 1'));
-        break;
-      case 'sum':
-        out.push(pi(ind, P.out + ' = ' + (String(P.start||'').trim()||'0')));
-        out.push(pi(ind, 'for ' + P.item + ' in ' + P.list + ':'));
-        out.push(pi(ind+1, P.out + ' = ' + P.out + ' + ' + P.item));
-        break;
-    }
-  }
-  return out;
-}
-function genPython(){
-  const vars = Object.keys(S.vars);
-  let head = '';
-  if(vars.length){
-    head = '# 初始数据\n' + vars.map(k=>{
-      const v = S.vars[k];
-      return k + ' = ' + (Array.isArray(v) ? '[' + v.map(x=>typeof x==='string'?("'"+x+"'"):x).join(', ') + ']' :
-                              typeof v==='string' ? ("'"+v+"'") : v);
-    }).join('\n') + '\n\n';
-  }
-  let body = genList(S.blocks, 0);
-  if(!S.blocks.length) body = ['#（装配区还是空的）'];
-  return head + '# 我的逻辑\n' + body.join('\n');
-}
-
-/* ---------- 结构检查 ---------- */
-function checkStructure(){
-  const issues = [];
-  if(!S.blocks.length) issues.push('装配区还是空的，先从左边零件库拿几个零件');
-  if(S.screen==='builder' && !S.level && !String(S.goal||'').trim()) issues.push('还没写下你的目标（我到底想让电脑干嘛？）');
-  (function walk(list, path){
-    list.forEach((b,i)=>{
-      const p = path ? path+' 里的第 '+(i+1)+' 个' : '第 '+(i+1)+' 个';
-      const miss = t => issues.push(p + '「'+PACKS[b.kind].name+'」' + t);
-      const P = b.params;
-      switch(b.kind){
-        case 'set':
-          if(!String(P.var||'').trim()) miss('还没填变量名');
-          if(!String(P.expr||'').trim()) miss('还没填要放进去的值');
-          break;
-        case 'print':
-          if(!String(P.expr||'').trim()) miss('还没填要输出什么');
-          break;
-        case 'if':
-          if(!condFilled(P.cond)) miss('条件还没填完整');
-          if(!b.body.length) miss('里面空空的，至少放一个零件');
-          if(P.hasElse && !b.elseBody.length) miss('「否则」里空空的');
-          break;
-        case 'for':
-          if(!P.list) miss('还没选要遍历的列表');
-          if(!String(P.item||'').trim()) miss('还没给每一项起名字');
-          if(!b.body.length) miss('循环体里空空的');
-          break;
-        case 'while':
-          if(!condFilled(P.stop)) miss('出口还没写完整——先想清楚什么时候停！');
-          if(!b.body.length) miss('循环体里空空的');
-          break;
-        case 'filter': case 'find': case 'count':
-          if(!P.list) miss('还没选数据来源');
-          if(!String(P.item||'').trim()) miss('还没给每一项起名字');
-          if(!String(P.out||'').trim()) miss('还没填结果变量名');
-          if(!condFilled(P.cond)) miss('条件还没填完整');
-          break;
-        case 'sum':
-          if(!P.list) miss('还没选数据来源');
-          if(!String(P.out||'').trim()) miss('还没填结果变量名');
-          break;
-      }
-      if(b.body) walk(b.body, p);
-      if(b.elseBody && b.elseBody.length) walk(b.elseBody, p + ' 否则');
-    });
-  })(S.blocks, '');
-  return issues;
-}
-
-/* ---------- 判定引擎 ---------- */
-function computeVerdict(issues, res){
-  const ch = S.level;
-  const outNorm = res.output.map(norm);
-  const v = {};
-  v.structure = {
-    icon:'🧱', name:'结构完整',
-    pass: issues.length===0,
-    detail: issues.length ? issues.join('；') : '每个零件都填好了，结构齐了'
-  };
-  v.runs = {
-    icon:'⚙️', name:'能运行',
-    pass: !res.error,
-    detail: res.error ? '运行时卡住了：' + res.error.message : '从头跑到尾，没有报错'
-  };
-  v.terminates = {
-    icon:'🛑', name:'能终止',
-    pass: !res.dead && !res.error,
-    detail: res.dead ? '循环没有走到出口，永远停不下来！回去检查出口条件' :
-           (res.error ? '程序出错了，谈不上正常结束' : '所有循环都正常走到了出口，稳稳停下')
-  };
-  const missing = ch ? ch.required.filter(k=>!res.usedKinds.has(k)) : [];
-  const logicPass = missing.length===0 && res.output.length>0;
-  v.logic = {
-    icon:'🧠', name:'逻辑正确',
-    pass: logicPass,
-    detail: missing.length ? '这道题需要用到：' + missing.map(k=>PACKS[k].name).join('、') + '（还没用上）' :
-           (res.output.length ? '该用的零件用了，也产出了结果' : '一个结果都没有输出——至少用「输出」说点什么')
-  };
-  let answerPass, answerDetail;
-  if(!ch){
-    answerPass = res.output.length>0;
-    answerDetail = '自由模式：能跑出结果就算赢';
-  }else if(ch.expected.mode==='exact'){
-    answerPass = outNorm.length===ch.expected.values.length && outNorm.every((x,i)=>x===ch.expected.values[i]);
-    answerDetail = answerPass ? '输出和预期完全一致，漂亮！' :
-      '预期：' + ch.expected.values.join(' ／ ') + '；你输出了：' + (outNorm.length ? outNorm.join(' ／ ') : '（什么都没输出）');
-  }else{
-    answerPass = res.output.length>0;
-    answerDetail = '开放式关卡：能跑通就算过关';
-  }
-  v.answer = {icon:'🎯', name:'答案正确', pass:answerPass, detail:answerDetail};
-  return v;
-}
-function applyResult(v){
-  const ch = S.level;
-  if(!ch) return 0;
-  const rec = SAVE.levels[ch.id] = SAVE.levels[ch.id] || {dims:{}};
-  rec.dims = rec.dims || {};
-  let gained = 0;
-  ['structure','runs','terminates','logic','answer'].forEach(d=>{
-    if(v[d].pass && !rec.dims[d]){ rec.dims[d]=true; gained += 20; }
-  });
-  if(['structure','runs','terminates','logic','answer'].every(d=>v[d].pass) && !rec.doneAll){
-    rec.doneAll = true; gained += 50;
-  }
-  SAVE.xp += gained;
-  persist();
-  return gained;
-}
-function isUnlocked(i){
-  if(i===0) return true;
-  const rec = SAVE.levels[LEVELS[i-1].id];
-  return !!(rec && rec.dims && rec.dims.answer);
-}
-
-/* ---------- 渲染：首页 ---------- */
-function totalStars(){
-  let n=0;
-  LEVELS.forEach(l=>{ const r=SAVE.levels[l.id]; if(r&&r.dims) n+=Object.keys(r.dims).length; });
-  return n;
-}
-function updateHud(){
-  q('#xpBadge').textContent = '⭐ ' + SAVE.xp + ' 经验';
-  q('#starBadge').textContent = '🏅 ' + totalStars() + ' / ' + (LEVELS.length*5) + ' 星';
-}
-function renderHome(){
-  updateHud();
-  q('#backBtn').classList.add('hidden');
-  q('#lvGrid').innerHTML = LEVELS.map((l,i)=>{
-    const unlocked = isUnlocked(i);
-    const rec = SAVE.levels[l.id] || {dims:{}};
-    const starN = Object.keys(rec.dims||{}).length;
-    return '<div class="lvcard '+(unlocked?'':'locked')+'" data-i="'+i+'">' +
-      '<div class="lvicon">'+(unlocked?l.icon:'🔒')+'</div>' +
-      '<div class="lvtitle">'+l.title+'</div>' +
-      '<div class="lvgoal">'+esc(l.goal)+'</div>' +
-      '<div class="lvstars">'+'⭐'.repeat(starN)+'☆'.repeat(5-starN)+'</div>' +
-      (l.soul?'<div class="soul-tag">灵魂关卡</div>':'') +
-      '</div>';
-  }).join('');
-}
-q('#lvGrid').addEventListener('click', e=>{
-  const card = e.target.closest('.lvcard');
-  if(!card) return;
-  const i = +card.dataset.i;
-  if(!isUnlocked(i)){ toast('先过上一关，才能解锁这里'); return; }
-  startLevel(i);
-});
-q('#goLevel').addEventListener('click', ()=>{ startLevel(0); });
-q('#goFree').addEventListener('click', startSandbox);
-q('#resetProg').addEventListener('click', ()=>{
-  openModal('<h3>⚠️ 重置全部进度？</h3><p>所有经验值和星星都会清零，关卡会重新锁上。确定吗？</p>' +
-    '<div class="mbtns"><button class="btn primary" id="doReset">确定重置</button><button class="btn ghost" id="noReset">再想想</button></div>');
-  q('#doReset').onclick = ()=>{ SAVE={xp:0,levels:{}}; persist(); renderHome(); closeModal(); toast('进度已重置'); };
-  q('#noReset').onclick = closeModal;
-});
-
-/* ---------- 进入关卡 / 自由模式 ---------- */
-function showBuilder(){
-  S.screen='builder';
-  q('#home').classList.add('hidden');
-  q('#builder').classList.remove('hidden');
-  q('#backBtn').classList.remove('hidden');
-}
-function startLevel(i){
-  const l = LEVELS[i];
-  S.level = l;
-  S.blocks = [];
-  S.vars = snap(l.data);
-  S.trace = null; S.verdict = null;
-  showBuilder();
-  renderAll();
-  toast('关卡「'+l.title+'」开始！先想清楚：我要电脑干嘛？');
-}
-function startSandbox(){
-  S.level = null;
-  let saved = null;
-  try{ saved = JSON.parse(localStorage.getItem('logicForgeSandbox')||'null'); }catch(e){}
-  if(saved && saved.blocks){
-    S.goal = saved.goal || '';
-    S.varRows = saved.varRows || [];
-    S.blocks = saved.blocks || [];
-  }else{
-    S.goal = '';
-    S.varRows = [{name:'名单', raw:'["小明","小红","小刚"]'}];
-    S.blocks = [];
-  }
-  applyVarRows();
-  S.trace = null; S.verdict = null;
-  showBuilder();
-  renderAll();
-  toast('自由搭建：先写下「我到底想让电脑干嘛」');
-}
-function applyVarRows(){
-  S.vars = {};
-  S.varRows.forEach(r=>{
-    if(!String(r.name||'').trim()) return;
-    let v;
-    try{
-      v = JSON.parse(r.raw);
-      if(typeof v==='object' && v!==null && !Array.isArray(v)) v = r.raw;
-    }catch(e){
-      if(/^-?\d+(\.\d+)?$/.test(String(r.raw).trim())) v = Number(r.raw);
-      else v = r.raw;
-    }
-    S.vars[String(r.name).trim()] = v;
-  });
-}
-function saveSandbox(){
-  if(S.level) return;
-  try{
-    localStorage.setItem('logicForgeSandbox', JSON.stringify({goal:S.goal, varRows:S.varRows, blocks:S.blocks}));
+    if(typeof localStorage!=='undefined') localStorage.setItem('logicForgeSave', JSON.stringify(SAVE));
   }catch(e){}
 }
 
-/* ---------- 渲染：工作台 ---------- */
-function renderAll(){
-  renderGoalCard();
-  renderPalette();
-  renderWorkspace();
-  invalidateRun(false);
+/* ============================================================
+   工具函数
+   ============================================================ */
+function q(s){ return document.querySelector(s); }
+function qq(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function toNum(v){
+  if(typeof v==='number') return v;
+  if(typeof v==='string' && /^-?\d+(\.\d+)?$/.test(v.trim())) return parseFloat(v);
+  return null;
 }
-function renderGoalCard(){
-  const gc = q('#goalCard');
-  if(S.level){
-    const l = S.level;
-    const dataRows = Object.keys(l.data).map(k=>{
-      const v = l.data[k];
-      return '<tr><td>'+esc(k)+'</td><td>'+fmt(v)+'</td></tr>';
-    }).join('');
-    const reqChips = l.required.map(k=>'<span class="chip">'+PACKS[k].icon+' '+PACKS[k].name+'</span>').join('');
-    gc.innerHTML = '<h3>🎯 任务目标</h3>' +
-      '<div class="goal-text">'+esc(l.goal)+'</div>' +
-      (l.soul?'<div class="hintbox">💡 灵魂关卡：<b>先写出口</b>——动手之前，先回答「什么时候停？」</div>':'') +
-      '<h3 style="margin-top:12px">📦 手上的数据</h3>' +
-      '<table class="datatbl">'+dataRows+'</table>' +
-      '<div class="chips">'+reqChips+'</div>' +
-      '<button class="btn ghost" id="hintBtn" style="margin-top:12px; width:100%; font-size:12px; padding:6px;">💡 卡住了？看提示</button>' +
-      '<div class="hintbox hidden" id="hintBox">'+esc(l.hint)+'</div>';
-    q('#hintBtn').onclick = ()=>q('#hintBox').classList.toggle('hidden');
-  }else{
-    const rows = S.varRows.map((r,i)=>
-      '<div class="varedit"><input class="vn" data-vidx="'+i+'" data-vk="name" value="'+esc(r.name)+'" placeholder="变量名">' +
-      '<input class="vv" data-vidx="'+i+'" data-vk="raw" value="'+esc(r.raw)+'" placeholder="值，比如 5 或 [1,2,3] 或 文字">' +
-      '<button class="mini" data-vdel="'+i+'">🗑</button></div>'
-    ).join('');
-    gc.innerHTML = '<h3>🎯 我到底想让电脑干嘛？</h3>' +
-      '<input id="goalInput" data-role="goal" placeholder="用一句话写下你的目标…" value="'+esc(S.goal)+'">' +
-      '<h3 style="margin-top:12px">📦 初始数据 <span class="sub">列表写成 [1,2,3]，文字带引号</span></h3>' +
-      rows +
-      '<button class="btn ghost" id="addVarBtn" style="font-size:12px; padding:5px 12px;">＋ 添加变量</button>';
-    q('#addVarBtn').onclick = ()=>{ S.varRows.push({name:'', raw:''}); renderGoalCard(); };
-    gc.querySelectorAll('[data-vdel]').forEach(b=>{
-      b.onclick = ()=>{ S.varRows.splice(+b.dataset.vdel,1); applyVarRows(); renderGoalCard(); renderWorkspace(); saveSandbox(); };
-    });
+function norm(v){
+  if(v===null || v===undefined) return '未找到';
+  if(Array.isArray(v)) return v.map(function(x){ return norm(x); }).join(',');
+  if(typeof v==='number') return Number.isInteger(v) ? String(v) : String(Math.round(v*100)/100);
+  return String(v);
+}
+function toast(msg){
+  const t = q('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ t.classList.remove('show'); }, 2200);
+}
+function openModal(html){
+  q('#modalWrap').innerHTML = '<div class="mcard">'+html+'</div>';
+  q('#modalWrap').classList.remove('hidden');
+}
+function closeModal(){ q('#modalWrap').classList.add('hidden'); q('#modalWrap').innerHTML=''; }
+
+/* ============================================================
+   表达式求值（安全 · 纯词当文字）
+   ============================================================ */
+const DANGER = /(window|document|global|process|eval|function|alert|location|constructor|__proto__|import|require|fetch|localStorage|XMLHttpRequest)/i;
+
+function tokenizeExpr(s){
+  const toks = []; let i = 0;
+  while(i < s.length){
+    const c = s[i];
+    if(c===' ' || c==='\t' || c==='\u3000'){ i++; continue; }
+    if(c==='"' || c==="'"){
+      let j = i+1;
+      while(j < s.length && s[j]!==c) j++;
+      toks.push({t:'str', v:s.slice(i+1, j)});
+      i = j+1; continue;
+    }
+    if(/[\u4e00-\u9fa5A-Za-z_]/.test(c)){
+      let j = i;
+      while(j < s.length && /[\u4e00-\u9fa5A-Za-z0-9_]/.test(s[j])) j++;
+      toks.push({t:'name', v:s.slice(i, j)});
+      i = j; continue;
+    }
+    if(/\d/.test(c) || (c==='.' && /\d/.test(s[i+1]||''))){
+      let j = i;
+      while(j < s.length && /[\d.]/.test(s[j])) j++;
+      toks.push({t:'num', v:parseFloat(s.slice(i, j))});
+      i = j; continue;
+    }
+    if('+-*/'.indexOf(c) >= 0){
+      const prev = toks[toks.length-1];
+      const isUnary = (c==='-' && (!prev || prev.t==='op'));
+      if(isUnary){
+        let j = i+1;
+        while(j < s.length && s[j]===' ') j++;
+        if(j < s.length && /\d/.test(s[j])){
+          let k = j;
+          while(k < s.length && /[\d.]/.test(s[k])) k++;
+          toks.push({t:'num', v:-parseFloat(s.slice(j, k))});
+          i = k; continue;
+        }
+        throw Error('减号后面没有数字');
+      }
+      toks.push({t:'op', v:c});
+      i++; continue;
+    }
+    throw Error('看不懂的符号：'+c);
+  }
+  return toks;
+}
+
+function evalExpr(src, vars){
+  const s = String(src==null ? '' : src).trim();
+  if(s==='') throw Error('空空如也');
+  if(DANGER.test(s)) throw Error('⛔ 这些词不能出现在这里');
+  if(/^"[\s\S]*"$/.test(s) || /^'[\s\S]*'$/.test(s)) return s.slice(1, -1);
+  if(/^\[[\s\S]*\]$/.test(s)){
+    const inner = s.slice(1, -1).trim();
+    if(!inner) return [];
+    return inner.split(/[,，]/).map(function(x){ return evalExpr(x, vars); });
+  }
+  const toks = tokenizeExpr(s);
+  if(!toks.length) throw Error('空空如也');
+  const vals = [];
+  for(let i=0; i<toks.length; i++){
+    const tk = toks[i];
+    if(tk.t==='op'){ vals.push(tk); continue; }
+    if(tk.t==='num' || tk.t==='str'){ vals.push(tk.v); continue; }
+    if(Object.prototype.hasOwnProperty.call(vars, tk.v)) vals.push(vars[tk.v]);
+    else if(/^-?\d+(\.\d+)?$/.test(tk.v)) vals.push(parseFloat(tk.v));
+    else vals.push(tk.v); /* 纯词当文字 */
+  }
+  /* 先乘除 */
+  for(let i=1; i<vals.length-1; ){
+    const tk = vals[i];
+    if(tk && tk.t==='op' && (tk.v==='*' || tk.v==='/')){
+      const a = toNum(vals[i-1]), b = toNum(vals[i+1]);
+      if(a===null || b===null) throw Error('乘除只能对数字用');
+      if(tk.v==='/' && b===0) throw Error('不能除以 0');
+      vals.splice(i-1, 3, tk.v==='*' ? a*b : a/b);
+    } else i++;
+  }
+  /* 再加减 */
+  let acc = vals[0];
+  if(acc && acc.t==='op') throw Error('式子不完整');
+  for(let i=1; i<vals.length; i+=2){
+    const tk = vals[i];
+    if(!tk || tk.t!=='op') throw Error('式子不完整');
+    const b = vals[i+1];
+    if(tk.v==='+'){
+      const na = toNum(acc), nb = toNum(b);
+      if(na!==null && nb!==null && typeof acc!=='string' && typeof b!=='string' && !Array.isArray(acc) && !Array.isArray(b)) acc = na + nb;
+      else acc = norm(acc) + norm(b);
+    }else{
+      const na = toNum(acc), nb = toNum(b);
+      if(na===null || nb===null) throw Error('减法只能对数字用');
+      acc = na - nb;
+    }
+  }
+  return acc;
+}
+
+function evalCond(c, vars){
+  if(!c || !String(c.left||'').trim() || String(c.right==null?'':c.right).trim()==='') throw Error('条件还不完整');
+  const a = evalExpr(c.left, vars), b = evalExpr(c.right, vars);
+  const na = toNum(a), nb = toNum(b);
+  const A = (na!==null && nb!==null) ? na : String(a);
+  const B = (na!==null && nb!==null) ? nb : String(b);
+  switch(c.op){
+    case '==': return A === B;
+    case '!=': return A !== B;
+    case '>':  return A > B;
+    case '<':  return A < B;
+    case '>=': return A >= B;
+    case '<=': return A <= B;
+  }
+  throw Error('不认识的比较：'+c.op);
+}
+
+/* ============================================================
+   积木的创建与查找
+   ============================================================ */
+function newBlock(kind){
+  const b = { id:'b'+(++uid), kind:kind, body:[] };
+  if(kind==='print')  b.params = {expr:'你好'};
+  if(kind==='set')    b.params = {var:'盒子', expr:'0'};
+  if(kind==='if'){    b.params = {cond:{left:'',op:'==',right:''}, hasElse:false}; b.elseBody = []; }
+  if(kind==='while')  b.params = {stop:{left:'',op:'==',right:''}};
+  if(kind==='for')    b.params = {list:'', item:'每一个'};
+  if(kind==='filter') b.params = {list:'', item:'每一项', cond:{left:'',op:'>',right:''}, out:'挑出的'};
+  if(kind==='count')  b.params = {list:'', item:'每一项', cond:{left:'',op:'>',right:''}, out:'个数'};
+  if(kind==='sum')    b.params = {list:'', item:'每一项', out:'总和', start:'0'};
+  if(kind==='find')   b.params = {list:'', item:'每一项', cond:{left:'',op:'>',right:''}, out:'找到的'};
+  return b;
+}
+function fromDef(def){
+  const b = newBlock(def.kind);
+  if(def.params) b.params = JSON.parse(JSON.stringify(def.params));
+  if(def.body) b.body = def.body.map(fromDef);
+  if(def.elseBody) b.elseBody = def.elseBody.map(fromDef);
+  return b;
+}
+function findBlock(id, list){
+  list = list || S.blocks;
+  for(let i=0; i<list.length; i++){
+    if(list[i].id===id) return list[i];
+    const inBody = findBlock(id, list[i].body);
+    if(inBody) return inBody;
+    if(list[i].elseBody){
+      const inElse = findBlock(id, list[i].elseBody);
+      if(inElse) return inElse;
+    }
+  }
+  return null;
+}
+function findOwner(id, list, parent){
+  list = list || S.blocks;
+  for(let i=0; i<list.length; i++){
+    if(list[i].id===id) return {owner:parent||null, arr:list, idx:i, block:list[i]};
+    let r = findOwner(id, list[i].body, list[i]);
+    if(r) return r;
+    if(list[i].elseBody){
+      r = findOwner(id, list[i].elseBody, list[i]);
+      if(r) return r;
+    }
+  }
+  return null;
+}
+
+/* ============================================================
+   执行引擎（带轨迹 · 死循环检测）
+   ============================================================ */
+const STEP_LIMIT = 3000;
+
+function runProgram(){
+  const steps = [];
+  const output = [];
+  const vars = Object.assign({}, S.vars);
+  let dead = false, error = null, count = 0;
+
+  function snap(bid){ steps.push({bid:bid, vars:Object.assign({}, vars), output:output.slice()}); }
+
+  function execList(list){
+    for(let i=0; i<list.length; i++) execBlock(list[i]);
+  }
+  function execBlock(b){
+    if(++count > STEP_LIMIT){
+      dead = true;
+      throw Error('跑了 3000 步还没停——这个循环的出口到不了，它停不下来啦！');
+    }
+    snap(b.id);
+    const p = b.params || {};
+    switch(b.kind){
+      case 'print':
+        output.push(evalExpr(p.expr, vars));
+        break;
+      case 'set':
+        vars[p.var] = evalExpr(p.expr, vars);
+        break;
+      case 'if':
+        if(evalCond(p.cond, vars)) execList(b.body);
+        else if(p.hasElse) execList(b.elseBody);
+        break;
+      case 'while': {
+        while(!evalCond(p.stop, vars)){
+          if(++count > STEP_LIMIT){
+            dead = true;
+            throw Error('跑了 3000 步还没停——这个循环的出口到不了，它停不下来啦！');
+          }
+          snap(b.id);
+          execList(b.body);
+        }
+        break;
+      }
+      case 'for': {
+        const arr = evalExpr(p.list, vars);
+        if(!Array.isArray(arr)) throw Error('「'+p.list+'」不是一个名单，没法挨个看');
+        for(let i=0; i<arr.length; i++){
+          if(++count > STEP_LIMIT){
+            dead = true;
+            throw Error('跑了 3000 步还没停——这个循环的出口到不了，它停不下来啦！');
+          }
+          vars[p.item] = arr[i];
+          snap(b.id);
+          execList(b.body);
+        }
+        break;
+      }
+      case 'filter': case 'count': case 'find': {
+        const arr = evalExpr(p.list, vars);
+        if(!Array.isArray(arr)) throw Error('「'+p.list+'」不是一个名单，没法挨个看');
+        if(b.kind==='filter'){
+          const out = [];
+          for(let i=0; i<arr.length; i++){
+            vars[p.item] = arr[i];
+            if(evalCond(p.cond, vars)) out.push(arr[i]);
+          }
+          vars[p.out] = out;
+        }else if(b.kind==='count'){
+          let n = 0;
+          for(let i=0; i<arr.length; i++){
+            vars[p.item] = arr[i];
+            if(evalCond(p.cond, vars)) n++;
+          }
+          vars[p.out] = n;
+        }else{
+          vars[p.out] = null;
+          for(let i=0; i<arr.length; i++){
+            vars[p.item] = arr[i];
+            if(evalCond(p.cond, vars)){ vars[p.out] = arr[i]; break; }
+          }
+        }
+        break;
+      }
+      case 'sum': {
+        const arr = evalExpr(p.list, vars);
+        if(!Array.isArray(arr)) throw Error('「'+p.list+'」不是一个名单，没法挨个加');
+        let acc = evalExpr(p.start || '0', vars);
+        for(let i=0; i<arr.length; i++){
+          vars[p.item] = arr[i];
+          const a = toNum(acc), b2 = toNum(arr[i]);
+          acc = (a!==null && b2!==null) ? a+b2 : norm(acc)+norm(arr[i]);
+        }
+        vars[p.out] = acc;
+        break;
+      }
+    }
+  }
+
+  try{ execList(S.blocks); }
+  catch(e){ error = (e && e.message) ? e.message : String(e); }
+
+  return { output:output, state:vars, error:error, dead:dead, steps:steps };
+}
+
+/* ============================================================
+   Python 生成器（渐进对照）
+   ============================================================ */
+function condPy(c){
+  if(!c) return '???';
+  return c.left+' '+c.op+' '+c.right;
+}
+function genPython(){
+  const lines = [];
+  function genList(list, ind){
+    const pad = '    '.repeat(ind);
+    for(const b of list){
+      const p = b.params || {};
+      switch(b.kind){
+        case 'print':
+          lines.push(pad+'print('+p.expr+')');
+          break;
+        case 'set':
+          lines.push(pad+p.var+' = '+p.expr);
+          break;
+        case 'if':
+          lines.push(pad+'if '+condPy(p.cond)+':');
+          if(b.body.length) genList(b.body, ind+1);
+          else lines.push(pad+'    pass');
+          if(p.hasElse){
+            lines.push(pad+'else:');
+            if(b.elseBody.length) genList(b.elseBody, ind+1);
+            else lines.push(pad+'    pass');
+          }
+          break;
+        case 'while':
+          lines.push(pad+'# 出口：当 '+p.stop.left+' '+p.stop.op+' '+p.stop.right+' 时停');
+          lines.push(pad+'while not ('+condPy(p.stop)+'):');
+          if(b.body.length) genList(b.body, ind+1);
+          else lines.push(pad+'    pass');
+          break;
+        case 'for':
+          lines.push(pad+'for '+p.item+' in '+p.list+':');
+          if(b.body.length) genList(b.body, ind+1);
+          else lines.push(pad+'    pass');
+          break;
+        case 'filter':
+          lines.push(pad+p.out+' = ['+p.item+' for '+p.item+' in '+p.list+' if '+condPy(p.cond)+']');
+          break;
+        case 'count':
+          lines.push(pad+p.out+' = 0');
+          lines.push(pad+'for '+p.item+' in '+p.list+':');
+          lines.push(pad+'    if '+condPy(p.cond)+':');
+          lines.push(pad+'        '+p.out+' = '+p.out+' + 1');
+          break;
+        case 'sum':
+          lines.push(pad+p.out+' = '+p.start);
+          lines.push(pad+'for '+p.item+' in '+p.list+':');
+          lines.push(pad+'    '+p.out+' = '+p.out+' + '+p.item);
+          break;
+        case 'find':
+          lines.push(pad+'for '+p.item+' in '+p.list+':');
+          lines.push(pad+'    if '+condPy(p.cond)+':');
+          lines.push(pad+'        '+p.out+' = '+p.item);
+          lines.push(pad+'        break');
+          break;
+      }
+    }
+  }
+  genList(S.blocks, 0);
+  return lines.join('\n');
+}
+
+/* ============================================================
+   结构检查（人话报错来源）
+   ============================================================ */
+function checkStructure(){
+  const iss = [];
+  function chk(b){
+    const p = b.params || {};
+    switch(b.kind){
+      case 'print':
+        if(!String(p.expr||'').trim()) iss.push('📣 有一句「说出来」还是空的');
+        break;
+      case 'set':
+        if(!String(p.var||'').trim() || !String(p.expr||'').trim()) iss.push('📥 有一个「放进盒子」还没填完整');
+        break;
+      case 'if':
+        if(!p.cond || !String(p.cond.left||'').trim() || String(p.cond.right==null?'':p.cond.right).trim()==='')
+          iss.push('🔀 有个「分岔路」的条件不完整');
+        if(!b.body.length && !(p.hasElse && b.elseBody && b.elseBody.length))
+          iss.push('🔀 有个「分岔路」两边都是空的');
+        break;
+      case 'while':
+        if(!p.stop || !String(p.stop.left||'').trim() || String(p.stop.right==null?'':p.stop.right).trim()==='')
+          iss.push('🔄 有个循环没有写出口（什么时候停）');
+        if(!b.body.length) iss.push('🔄 有个循环的身体是空的');
+        break;
+      case 'for':
+        if(!String(p.list||'').trim()) iss.push('🔁 有个「逐个拿」还没选名单');
+        if(!b.body.length) iss.push('🔁 有个循环的身体是空的');
+        break;
+      case 'filter': case 'count': case 'find':
+        if(!String(p.list||'').trim()) iss.push('📦 有个数据包还没选列表');
+        if(!p.cond || !String(p.cond.left||'').trim() || String(p.cond.right==null?'':p.cond.right).trim()==='')
+          iss.push('📦 有个数据包的条件不完整');
+        break;
+      case 'sum':
+        if(!String(p.list||'').trim()) iss.push('📦 有个「加起来」还没选列表');
+        break;
+    }
+    (b.body||[]).forEach(chk);
+    if(p.hasElse && b.elseBody) b.elseBody.forEach(chk);
+  }
+  S.blocks.forEach(chk);
+  return iss;
+}
+
+/* ---------- 渲染：首页与两个世界 ---------- */
+function updateHud(){ q('#xpHud').textContent = '⭐ ' + SAVE.xp + ' XP'; }
+
+function renderHome(){
+  const done = Object.keys(SAVE.tut).length;
+  q('#tutProgBadge').textContent = done + ' / ' + TUT.length + ' 关';
+  q('#lvGrid').innerHTML = TUT.map(function(lv, i){
+    const unlocked = (i===0) || SAVE.tut[TUT[i-1].id];
+    const isDone = !!SAVE.tut[lv.id];
+    return '<div class="lvcard'+(unlocked?'':' locked')+'" data-lv="'+i+'">'+
+      (isDone?'<div class="lvdone">✅</div>':'')+
+      '<div class="lvicon">'+lv.icon+'</div>'+
+      '<div class="lvtitle">'+(i+1)+'. '+esc(lv.title)+'</div>'+
+      '<div class="lvlearn">'+esc(lv.learn)+'</div></div>';
+  }).join('');
+  qq('#lvGrid .lvcard').forEach(function(card){
+    card.onclick = function(){
+      const i = +card.getAttribute('data-lv');
+      const unlocked = (i===0) || SAVE.tut[TUT[i-1].id];
+      if(!unlocked){ toast('🔒 先把前面的关卡闯过去～'); return; }
+      tutStart(i);
+    };
+  });
+}
+
+function showSection(name){
+  ['home','tut','builder'].forEach(function(n){ q('#'+n).classList.toggle('hidden', n!==name); });
+  q('#backBtn').classList.toggle('hidden', name==='home');
+}
+function goHome(){ stopTutTimer(); showSection('home'); renderHome(); }
+
+/* ============================================================
+   教程引擎：小笨 · 聚光灯 · 步骤执行
+   ============================================================ */
+function curStep(){ return T.level ? T.level.script[T.si] : null; }
+
+function clearSpot(){
+  q('#spotOverlay').classList.add('hidden');
+  qq('.lit').forEach(function(el){ el.classList.remove('lit'); });
+}
+function spotEl(el){
+  if(!el) return;
+  q('#spotOverlay').classList.remove('hidden');
+  el.classList.add('lit');
+  try{ el.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){}
+}
+function spotByTid(tid){
+  const el = q('[data-tid="'+tid+'"]');
+  if(el) spotEl(el);
+  return !!el;
+}
+
+function tutText(html){ q('#tutText').innerHTML = html; }
+function tutActions(list){
+  const box = q('#tutActions');
+  box.innerHTML = '';
+  (list||[]).forEach(function(it){
+    const b = document.createElement('button');
+    b.className = 'tbtn' + (it.ghost ? ' ghost' : '');
+    b.innerHTML = it.label;
+    b.onclick = it.fn;
+    box.appendChild(b);
+  });
+}
+function robotFx(cls, ms){
+  const r = q('#tutRobot') || q('#mapRobot');
+  if(!r) return;
+  r.classList.add(cls);
+  setTimeout(function(){ r.classList.remove(cls); }, ms);
+}
+function robotDizzy(ms){ robotFx('dizzy', ms); }
+function robotParty(ms){ robotFx('party', ms); }
+function confetti(){
+  const stage = q('#tutStage');
+  if(!stage) return;
+  const emo = ['🎉','⭐','🎊','✨','🍬'];
+  for(let i=0; i<10; i++){
+    const s = document.createElement('span');
+    s.className = 'confetti';
+    s.textContent = emo[Math.floor(Math.random()*emo.length)];
+    s.style.left = (5 + Math.random()*90) + '%';
+    s.style.top = '10px';
+    s.style.animationDelay = (Math.random()*0.4) + 's';
+    stage.appendChild(s);
+    setTimeout(function(){ s.remove(); }, 2400);
   }
 }
-function renderPalette(){
-  let html = '';
-  Object.keys(CATS).forEach(cat=>{
-    html += '<div class="palcats">'+CATS[cat].name+'</div>';
-    Object.keys(PACKS).filter(k=>PACKS[k].cat===cat).forEach(k=>{
-      const p = PACKS[k];
-      html += '<button class="packbtn" data-pack="'+k+'" style="--cc:'+CATS[cat].color+'">' +
-        '<div class="pi">'+p.icon+'</div><div class="pn">'+p.name+'</div><div class="pd">'+p.desc+'</div></button>';
-    });
-  });
-  q('#palette').innerHTML = html;
+
+/* ---------- 教程工作区渲染 ---------- */
+function bodyBoxHTML(b, label, target){
+  const kids = b.body.map(tutBlockHTML).join('');
+  return '<div class="tbodybox"><div class="tbodylabel">'+label+'</div>'+kids+
+    '<div class="addslot" data-owner="'+b.id+'" data-target="'+target+'" data-tid="slot">＋ 把零件放进来</div></div>';
 }
-function kindOptions(){
-  return Object.keys(PACKS).map(k=>{
-    const label = k==='while' ? '♻️ while（先写出口）' : PACKS[k].icon+' '+PACKS[k].name;
-    return '<option value="'+k+'">'+label+'</option>';
-  }).join('');
+function condHuman(c){
+  if(!c) return '';
+  return esc(c.left)+' <b>'+OP_HUMAN[c.op]+'</b> '+esc(c.right);
 }
-function inp(b,k,ph){
-  return '<input data-id="'+b.id+'" data-k="'+k+'" placeholder="'+esc(ph)+'" value="'+esc(b.params[k]||'')+'">';
-}
-function condEditor(b,k){
-  const c = b.params[k];
-  return '<span class="cond">' +
-    '<input data-id="'+b.id+'" data-k="'+k+'" data-ck="left" placeholder="变量/值" value="'+esc(c.left)+'">' +
-    '<select data-id="'+b.id+'" data-k="'+k+'" data-ck="op">' + OPS.map(o=>'<option value="'+esc(o)+'"'+(o===c.op?' selected':'')+'>'+esc(o)+'</option>').join('') + '</select>' +
-    '<input data-id="'+b.id+'" data-k="'+k+'" data-ck="right" placeholder="值" value="'+esc(c.right)+'">' +
-    '</span>';
-}
-function listSel(b,k){
-  const arrays = Object.keys(S.vars).filter(x=>Array.isArray(S.vars[x]));
-  return '<select data-id="'+b.id+'" data-k="'+k+'"><option value="">— 选一个列表 —</option>' +
-    arrays.map(a=>'<option value="'+esc(a)+'"'+(b.params[k]===a?' selected':'')+'>'+esc(a)+'（'+S.vars[a].length+' 项）</option>').join('') + '</select>';
-}
-function bodyHTML(b,key,label){
-  const list = b[key];
-  return '<div class="bodybox"><div class="bodylabel">'+label+'</div>' +
-    list.map(x=>blockHTML(x)).join('') +
-    '<div class="addrow"><select class="subsel" data-for="'+key+'" data-id="'+b.id+'">'+kindOptions()+'</select>' +
-    '<button class="mini add" data-act="addsub" data-id="'+b.id+'" data-key="'+key+'">＋ 添加</button></div></div>';
-}
-function blockHTML(b){
-  const c = CATS[PACKS[b.kind].cat];
-  const ctl = '<span class="bctl">' +
-    '<button class="mini" data-act="up" data-id="'+b.id+'">↑</button>' +
-    '<button class="mini" data-act="down" data-id="'+b.id+'">↓</button>' +
-    '<button class="mini" data-act="del" data-id="'+b.id+'">🗑</button></span>';
-  let inner = '';
+function tutBlockHTML(b){
+  const p = b.params || {};
+  let head = '', detail = '', cc = '#999', needsBody = false, label = '做这件事';
   switch(b.kind){
-    case 'set':
-      inner = '<div class="prow"><label>变量名</label>'+inp(b,'var','比如：倒计时')+'</div>' +
-              '<div class="prow"><label>填进去什么</label>'+inp(b,'expr','比如：0 或 倒计时 - 1')+'</div>';
-      break;
     case 'print':
-      inner = '<div class="prow"><label>输出什么</label>'+inp(b,'expr','比如：总分 或 "开工大吉"')+'</div>';
-      break;
+      head = '📣 <b>说出来</b>'; detail = '「'+esc(p.expr)+'」'; cc = '#3b82f6'; break;
+    case 'set':
+      head = '📥 <b>放进盒子</b>'; detail = '盒子「<b>'+esc(p.var)+'</b>」 ← '+esc(p.expr); cc = '#3b82f6'; break;
     case 'if':
-      inner = '<div class="prow"><label>什么时候做</label>'+condEditor(b,'cond')+'</div>' +
-              '<label class="chk"><input type="checkbox" data-id="'+b.id+'" data-k="hasElse"'+(b.params.hasElse?' checked':'')+'>不成立时走「否则」</label>' +
-              bodyHTML(b,'body','满足时做：') +
-              (b.params.hasElse ? bodyHTML(b,'elseBody','否则做：') : '');
+      head = '🔀 <b>如果</b>：'+condHuman(p.cond); cc = '#8b5cf6'; needsBody = true; label = '成立就做这件事';
+      break;
+    case 'while':
+      head = '🔄 <b>一直做</b>（直到出口）'; cc = '#ef4444'; needsBody = true; label = '循环身体（一直做的部分）';
+      detail = '<div class="stopcard">🛑 出口：当 <b>'+esc(p.stop.left)+' '+p.stop.op+' '+esc(p.stop.right)+'</b> 时停</div>';
       break;
     case 'for':
-      inner = '<div class="prow"><label>遍历哪个列表</label>'+listSel(b,'list')+'</div>' +
-              '<div class="prow"><label>每一项叫什么</label>'+inp(b,'item','比如：每一个')+'</div>' +
-              bodyHTML(b,'body','每一轮做：');
+      head = '🔁 <b>逐个拿</b>'; cc = '#ef4444'; needsBody = true; label = '每拿到一个，做';
+      detail = '把「'+esc(p.list)+'」里的每个放进「<b>'+esc(p.item)+'</b>」盒子';
       break;
-    case 'while': {
-      const s = b.params.stop;
-      inner = '<div class="stopbox"><div class="stoptag">🛑 出口：什么时候停？</div>' +
-              '<div class="prow" style="margin-bottom:0"><label>停的条件</label>'+condEditor(b,'stop')+'</div></div>' +
-              '<div class="derive">继续条件（自动生成）：'+esc(s.left||'？')+' '+negateOp(s.op)+' '+esc(s.right||'？')+'</div>' +
-              bodyHTML(b,'body','每一圈做：');
+    case 'filter':
+      head = '🔍 <b>挑出来</b>'; cc = '#10b981';
+      detail = '从「'+esc(p.list)+'」里挑 '+condHuman(p.cond)+' 的 →「<b>'+esc(p.out)+'</b>」';
       break;
-    }
-    case 'filter': case 'find': case 'count':
-      inner = '<div class="prow"><label>从哪个列表</label>'+listSel(b,'list')+'</div>' +
-              '<div class="prow"><label>每一项叫什么</label>'+inp(b,'item','比如：每一项')+'</div>' +
-              '<div class="prow"><label>'+(b.kind==='find'?'找到的条件':'满足的条件')+'</label>'+condEditor(b,'cond')+'</div>' +
-              '<div class="prow"><label>结果放进</label>'+inp(b,'out','结果变量')+'</div>';
+    case 'count':
+      head = '🔢 <b>数一数</b>'; cc = '#10b981';
+      detail = '数「'+esc(p.list)+'」里 '+condHuman(p.cond)+' 的个数 →「<b>'+esc(p.out)+'</b>」';
       break;
     case 'sum':
-      inner = '<div class="prow"><label>把哪个列表加起来</label>'+listSel(b,'list')+'</div>' +
-              '<div class="prow"><label>每一项叫什么</label>'+inp(b,'item','比如：每一项')+'</div>' +
-              '<div class="prow"><label>结果放进</label>'+inp(b,'out','比如：总和')+'</div>' +
-              '<div class="prow"><label>从几开始加</label>'+inp(b,'start','0')+'</div>';
+      head = '➕ <b>加起来</b>'; cc = '#10b981';
+      detail = '「'+esc(p.list)+'」全部加起来（从 '+esc(p.start)+' 开始）→「<b>'+esc(p.out)+'</b>」';
+      break;
+    case 'find':
+      head = '🎯 <b>找一个</b>'; cc = '#10b981';
+      detail = '「'+esc(p.list)+'」里第一个 '+condHuman(p.cond)+' 的 →「<b>'+esc(p.out)+'</b>」（找到就收手）';
       break;
   }
-  return '<div class="block" data-id="'+b.id+'" style="--c:'+c.color+'">' +
-    '<div class="bhead"><span>'+PACKS[b.kind].icon+'</span><b>'+PACKS[b.kind].name+'</b><span class="bdesc">'+PACKS[b.kind].desc+'</span>'+ctl+'</div>' +
+  let bodyHTML = '';
+  if(b.kind==='if'){
+    bodyHTML = bodyBoxHTML(b, '条件成立就做这件事', 'body');
+    if(p.hasElse) bodyHTML += bodyBoxHTML({id:b.id, body:b.elseBody||[]}, '否则做这件事', 'else');
+  }else if(needsBody){
+    bodyHTML = bodyBoxHTML(b, label, 'body');
+  }
+  return '<div class="tb" id="tb-'+b.id+'" style="--c:'+cc+'">'+
+    '<div class="tbhead">'+head+'<div class="tbctl"><button class="mini" data-del="'+b.id+'" title="拿走这个零件">✕</button></div></div>'+
+    (detail ? '<div class="tbdetail">'+detail+'</div>' : '')+
+    bodyHTML+
+    '</div>';
+}
+function renderTutWS(){
+  const ws = q('#tutWS');
+  if(!S.blocks.length){
+    ws.innerHTML = '<div class="tempty">工作区还是空的<br>（点下面的零件放进来）</div>';
+    return;
+  }
+  ws.innerHTML = S.blocks.map(tutBlockHTML).join('');
+}
+
+/* ---------- 零件盒 ---------- */
+function renderTutDock(newIds){
+  const keys = Object.keys(T.packs);
+  if(!keys.length){
+    q('#tutDock').innerHTML = '<span style="color:var(--muted); font-size:13px;">还没有零件，听小笨的</span>';
+    return;
+  }
+  q('#tutDock').innerHTML = keys.map(function(pid){
+    const d = T.packs[pid];
+    return '<button class="tpack'+((newIds&&newIds.indexOf(pid)>=0)?' newpack':'')+'" data-pack="'+pid+'" data-tid="pack:'+pid+'">'+
+      '<div class="pi">'+d.icon+'</div><div class="pn">'+esc(d.label)+'</div></button>';
+  }).join('');
+}
+
+/* ---------- 舞台 ---------- */
+function chips(arr){
+  return '<div class="chipsrow">'+arr.map(function(x){ return '<span class="schip">'+esc(x)+'</span>'; }).join('')+'</div>';
+}
+function varboxHTML(label, key, init){
+  return '<div class="varbox"><div class="vbname">📦 '+esc(label)+'</div><div class="vbval" data-k="'+esc(key)+'">'+esc(init)+'</div></div>';
+}
+function robotlineHTML(){
+  return '<div class="robotline"><span id="tutRobot">🤖</span><span class="rbubble">…</span></div>';
+}
+function renderTutStage(){
+  const scene = T.level.scene;
+  let h = '';
+  if(scene==='plain') h = '<div class="stagescene">'+robotlineHTML()+'</div>';
+  if(scene==='paper') h = '<div class="stagescene"><div class="paper">开工大吉</div>'+robotlineHTML()+'</div>';
+  if(scene==='box') h = '<div class="stagescene">'+varboxHTML('糖果数','糖果数','？')+robotlineHTML()+'</div>';
+  if(scene==='gate') h = '<div class="stagescene"><div class="gatewrap">'+
+    '<div class="personcard"><div class="pemoji">🧒</div><div class="pname">小明</div><div class="pheight">身高 130</div></div>'+
+    '<div class="paper" style="font-size:14px;">🎢 120 以上可玩</div></div>'+robotlineHTML()+'</div>';
+  if(scene==='score') h = '<div class="stagescene">'+varboxHTML('分数','分数',String(S.vars['分数']))+robotlineHTML()+'</div>';
+  if(scene==='map'){
+    let cells = '';
+    for(let i=0; i<5; i++) cells += '<div class="mcell"></div>';
+    cells += '<div class="mcell flag">🚩</div>';
+    h = '<div class="stagescene"><div class="maptack"><div class="mapcells">'+cells+'</div><div id="mapRobot" style="left:0;">🤖</div></div></div>';
+  }
+  if(scene==='rocket') h = '<div class="stagescene"><div class="rocketwrap"><span id="rocketEmoji">🚀</span><div class="rocketnum" id="rocketnum">'+esc(String(S.vars['倒计时']))+'</div></div></div>';
+  if(scene==='kids') h = '<div class="stagescene">'+chips(['👦 小明','👧 小红','👦 小刚'])+robotlineHTML()+'</div>';
+  if(scene==='scores') h = '<div class="stagescene">'+chips(S.vars['成绩单'])+varboxHTML('及格人数','及格人数','0')+robotlineHTML()+'</div>';
+  if(scene==='prices') h = '<div class="stagescene">'+chips(S.vars['价格'])+
+    '<div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">'+varboxHTML('贵的','贵的','—')+varboxHTML('总价','总价','—')+'</div>'+robotlineHTML()+'</div>';
+  if(scene==='ages') h = '<div class="stagescene">'+chips(S.vars['年龄表'])+varboxHTML('找到的','找到的','—')+robotlineHTML()+'</div>';
+  q('#tutStage').innerHTML = h;
+}
+function tutSync(vars, output){
+  const con = q('#tutConsole');
+  con.innerHTML = output.length
+    ? esc(output.map(norm).join('\n'))
+    : '<span class="cempty">（小笨还没说话）</span>';
+  const rb = q('#tutStage .rbubble');
+  if(rb) rb.textContent = output.length ? String(norm(output[output.length-1])) : '…';
+  qq('#tutStage .vbval[data-k]').forEach(function(el){
+    const k = el.getAttribute('data-k');
+    if(vars && (k in vars)) el.textContent = norm(vars[k]);
+  });
+  if(T.level && T.level.scene==='map'){
+    const mr = q('#mapRobot');
+    const n = (vars && toNum(vars['已走步数'])) || 0;
+    if(mr) mr.style.left = (n*62) + 'px';
+  }
+  if(T.level && T.level.scene==='rocket'){
+    const rn = q('#rocketnum');
+    if(rn && vars && ('倒计时' in vars)) rn.textContent = String(vars['倒计时']);
+  }
+}
+
+/* ---------- 关卡流程 ---------- */
+function stopTutTimer(){
+  if(T.timer){ clearTimeout(T.timer); T.timer = null; }
+  T.playing = false;
+}
+function tutStart(li){
+  T.li = li;
+  T.level = TUT[li];
+  T.si = 0;
+  T.packs = {};
+  T.dest = 'top';
+  T.want = null;
+  T.hintTier = 0;
+  T.busy = false;
+  stopTutTimer();
+  S.vars = Object.assign({}, T.level.vars);
+  S.blocks = [];
+  showSection('tut');
+  q('#tutName').innerHTML = T.level.icon + ' 第 ' + (li+1) + ' 关 · ' + esc(T.level.title);
+  q('#tutLearn').textContent = '学：' + T.level.learn;
+  renderTutStage();
+  renderTutWS();
+  renderTutDock();
+  tutSync(S.vars, []);
+  q('#tutDesc').textContent = '';
+  tutApply();
+}
+function tutNext(){
+  T.si++;
+  clearSpot();
+  if(T.si >= T.level.script.length){ goHome(); return; }
+  T.hintTier = 0;
+  tutApply();
+}
+
+function addTutPack(pid){
+  const def = T.packs[pid];
+  if(!def) return;
+  const nb = fromDef(def);
+  if(T.dest==='top'){ S.blocks.push(nb); }
+  else {
+    const parts = T.dest.split(':'); /* in:body:b1 */
+    const b = findBlock(parts[2]);
+    if(!b){ S.blocks.push(nb); }
+    else {
+      const list = (parts[1]==='else') ? (b.elseBody = b.elseBody||[]) : b.body;
+      list.push(nb);
+    }
+  }
+  T.dest = 'top';
+  renderTutWS();
+}
+function applyFix(fix){
+  for(let i=0; i<S.blocks.length; i++){
+    if(S.blocks[i].kind==='while'){ S.blocks[i].params.stop = JSON.parse(JSON.stringify(fix.stop)); }
+  }
+  renderTutWS();
+}
+
+function tutApply(){
+  const st = curStep();
+  if(!st){ goHome(); return; }
+  clearSpot();
+  T.want = null;
+  const total = T.level.script.length;
+  q('#tutProg').textContent = '第 ' + (T.si+1) + ' / ' + total + ' 步';
+
+  switch(st.t){
+    case 'say':
+      tutText(st.text);
+      tutActions([{label:'继续 →', fn:tutNext}]);
+      break;
+
+    case 'ask': {
+      tutText(st.text);
+      const acts = q('#tutActions');
+      acts.innerHTML = '';
+      st.options.forEach(function(op){
+        const btn = document.createElement('button');
+        btn.className = 'topt';
+        btn.innerHTML = esc(op.k);
+        btn.onclick = function(){
+          if(op.ok){
+            btn.classList.add('ok');
+            if(op.fix) applyFix(op.fix);
+            tutText('✔ <b>'+esc(op.k)+'</b>' + (st.goodAsk ? ' —— '+st.goodAsk : ' —— 答对了，就是这么回事！'));
+            setTimeout(tutNext, 700);
+          }else{
+            btn.classList.add('no');
+            setTimeout(function(){ btn.classList.remove('no'); }, 450);
+            toast('再想想～');
+          }
+        };
+        acts.appendChild(btn);
+      });
+      break;
+    }
+
+    case 'unlock':
+      st.packs.forEach(function(pd){ T.packs[pd.id] = pd; });
+      renderTutDock(st.packs.map(function(pd){ return pd.id; }));
+      tutText(st.text);
+      tutActions([{label:'继续 →', fn:tutNext}]);
+      break;
+
+    case 'click':
+      T.want = 'pack:'+st.pack;
+      tutText(st.text);
+      tutActions([]);
+      spotByTid('pack:'+st.pack);
+      break;
+
+    case 'slot':
+      T.want = 'slot';
+      tutText(st.text);
+      tutActions([]);
+      var slot = q('#tutWS .addslot');
+      if(slot) spotEl(slot); else toast('（先把循环放进来）');
+      break;
+
+    case 'setup':
+      S.blocks = st.blocks.map(fromDef);
+      renderTutWS();
+      tutSync(S.vars, []);
+      tutText(st.text);
+      tutActions([{label:'继续 →', fn:tutNext}]);
+      break;
+
+    case 'run':
+      T.want = 'run';
+      tutText(st.text || '好了，按下运行，让小笨跑起来 👇');
+      tutActions([]);
+      spotByTid('run');
+      break;
+
+    case 'py':
+      tutText('其实，你刚刚做的事，在真正的 Python 里长这样——<b>偷看一眼</b>（不着急，看懂多少算多少）：');
+      openModal(
+        '<h3>🐍 偷看一眼 Python</h3>'+
+        '<div class="pyrev-h">'+st.human.map(esc).join('<br>')+'</div>'+
+        '<div class="pyrev-arrow">↓ 翻译成 Python ↓</div>'+
+        '<pre class="code">'+esc(st.code)+'</pre>'+
+        '<div class="pyrev-note">'+st.note+'</div>'+
+        '<div class="mbtns"><button class="btn primary" id="pyOk">我知道了</button></div>'
+      );
+      q('#pyOk').onclick = function(){ closeModal(); tutNext(); };
+      tutActions([]);
+      break;
+
+    case 'fold':
+      tutText('刚才那套东西，被装进了一个零件里——点「拆开看看」：');
+      openModal(
+        '<h3>📦 恭喜解锁新零件</h3>'+
+        '<div class="foldwrap"><div class="foldbig">'+st.big+'</div><div class="foldname">'+esc(st.name)+'</div>'+
+        '<div class="foldchain">'+st.chain+'</div></div>'+
+        '<div class="mbtns"><button class="btn primary" id="foldOk">🔍 拆开看看</button></div>'
+      );
+      q('#foldOk').onclick = function(){ closeModal(); tutNext(); };
+      tutActions([]);
+      break;
+
+    case 'free':
+      st.packs.forEach(function(pd){ T.packs[pd.id] = pd; });
+      renderTutDock(st.packs.map(function(pd){ return pd.id; }));
+      tutText('零件都给你了：<b>'+esc(T.level.title)+'</b>——挑出贵的、加起来、说出总价。搭好就按运行！');
+      tutActions([{label:'🎯 看看任务', fn:function(){
+        openModal('<h3>🎯 毕业任务</h3><p>从 6 件价格 <b>120 45 200 88 150 30</b> 里：</p>'+
+          '<p>1️⃣ 🔍 挑出超过 100 的<br>2️⃣ ➕ 加到一起<br>3️⃣ 📣 说出总价</p>'+
+          '<div class="mbtns"><button class="btn primary" id="mkOk">开工</button></div>');
+        q('#mkOk').onclick = closeModal;
+      }}]);
+      break;
+
+    case 'win':
+      tutWin();
+      break;
+  }
+}
+
+/* ---------- 运行 · 播放 ---------- */
+function friendlyTutErr(err){
+  const m = String(err||'');
+  if(m.indexOf('出口')>=0) return '🤔 小笨看不懂这个循环<b>什么时候该停</b>——出口还没写完整。';
+  if(m.indexOf('不是一个名单')>=0) return '🤔 小笨拿到的不是一个名单，没法挨个看。';
+  if(m.indexOf('条件')>=0 && m.indexOf('不完整')>=0) return '🤔 有个判断的条件还缺一块，小笨没法比大小。';
+  if(m.indexOf('停不下来')>=0 || m.indexOf('3000')>=0) return '😵 这个循环的出口到不了，小笨停不下来了！';
+  if(m.indexOf('空')>=0) return '🤔 小笨还不知道要说什么——有句话是空的。';
+  return '🤔 ' + esc(m);
+}
+
+function tutRunClick(){
+  const st = curStep();
+  if(!st || (st.t!=='run' && st.t!=='free')){ toast('先跟着小笨把零件放好～'); return; }
+  if(T.busy || T.playing) return;
+  T.busy = true;
+  const r = runProgram();
+  T.busy = false;
+
+  if(r.dead && st.dead){
+    tutPlay(r, st);
+    return;
+  }
+  if(r.error){
+    tutText('<span style="color:var(--bad); font-weight:700;">'+friendlyTutErr(r.error)+'</span><br><span style="font-size:12px; color:var(--muted);">修好再运行～也可以点「🆘 卡住了」。</span>');
+    robotDizzy(1200);
+    return;
+  }
+  let ok = false;
+  try{ ok = !!st.pass(r); }catch(e){ ok = false; }
+  if(!ok){
+    tutText('🤔 跑是跑完了，但结果不太对。小笨说的是：<b>'+esc(r.output.map(norm).join('，')||'（什么都没说）')+'</b>。检查一下零件和顺序？');
+    robotDizzy(1200);
+    return;
+  }
+  tutPlay(r, st);
+}
+
+function tutPlay(r, st){
+  clearSpot();
+  stopTutTimer();
+  T.playing = true;
+  const dead = !!r.dead;
+  const show = dead ? r.steps.slice(0, 8) : r.steps;
+  const speed = dead ? 170 : 320;
+  let i = 0;
+  tutSync(S.vars, []);
+  qq('#tutWS .tb').forEach(function(el){ el.classList.remove('now'); });
+
+  function finish(){
+    T.playing = false;
+    if(dead){
+      const con = q('#tutConsole');
+      con.innerHTML += '\n…（一直重复，停不下来）';
+      robotDizzy(1800);
+    }else{
+      tutSync(r.state, r.output);
+      if(T.level.scene==='rocket'){
+        const re = q('#rocketEmoji');
+        if(re) re.classList.add('fly');
+      }
+      robotParty(1600);
+    }
+    tutText(st.good || '跑对了！🎉');
+    tutActions([{label:'继续 →', fn:tutNext}]);
+  }
+  function tick(){
+    if(i >= show.length){ finish(); return; }
+    const s = show[i];
+    qq('#tutWS .tb').forEach(function(el){ el.classList.remove('now'); });
+    const el = q('#tb-'+s.bid);
+    if(el) el.classList.add('now');
+    tutSync(s.vars, s.output);
+    i++;
+    T.timer = setTimeout(tick, speed);
+  }
+  tick();
+}
+
+/* ---------- 过关 ---------- */
+function tutWin(){
+  const st = curStep();
+  const lvl = T.level;
+  const firstTime = !SAVE.tut[lvl.id];
+  SAVE.tut[lvl.id] = { done:true };
+  const gain = (st && st.final) ? 300 : 100;
+  if(firstTime) SAVE.xp += gain;
+  persist();
+  updateHud();
+  robotParty(2000);
+  confetti();
+  const isLast = (T.li >= TUT.length-1);
+  openModal(
+    '<div class="wtitle">'+((st&&st.final)?'🎓 毕业了！':'🎉 过关！')+'</div>'+
+    '<div class="wstars">⭐⭐⭐</div>'+
+    '<div class="wsub">'+esc(lvl.icon+' 第'+(T.li+1)+'关 · '+lvl.title)+' —— '+esc(lvl.learn)+'</div>'+
+    ((st&&st.final)? '<div class="wlearn">你已经从「让它说话」走到了「自由组装」。<br>自由工坊的大门，正式为你敞开。</div>' : '')+
+    (firstTime? '<div class="wxp">＋'+gain+' XP</div>' : '<div class="wxp" style="color:var(--muted);">（已完成过，不再重复给 XP）</div>')+
+    '<div class="mbtns">'+
+    (!isLast? '<button class="btn primary" id="wNext">下一关 →</button>' : '')+
+    ((st&&st.final)? '<button class="btn primary" id="wFree">去自由工坊 →</button>' : '')+
+    '<button class="btn ghost" id="wHome">回地图</button></div>'
+  );
+  if(q('#wNext')) q('#wNext').onclick = function(){ closeModal(); tutStart(T.li+1); };
+  if(q('#wFree')) q('#wFree').onclick = function(){ closeModal(); openBuilder(); };
+  q('#wHome').onclick = function(){ closeModal(); goHome(); };
+}
+
+/* ---------- 三级提示 · 帮我放好 ---------- */
+const TUT_AUTOS = {
+  assembleFinal: function(){
+    S.blocks = [
+      fromDef({kind:'filter', params:{list:'价格',item:'每一项',cond:{left:'每一项',op:'>',right:'100'},out:'贵的'}}),
+      fromDef({kind:'sum', params:{list:'贵的',item:'每一项',out:'总价',start:'0'}}),
+      fromDef({kind:'print', params:{expr:'总价'}})
+    ];
+    renderTutWS();
+    toast('放好了～运行试试！');
+  }
+};
+function tutAutoDo(){
+  closeModal();
+  clearSpot();
+  const st = curStep();
+  if(!st) return;
+  if(st.t==='click'){ addTutPack(st.pack); tutNext(); }
+  else if(st.t==='slot'){
+    const slot = q('#tutWS .addslot');
+    if(slot) slotClickByEl(slot);
+  }
+  else if(st.t==='run'){ tutRunClick(); }
+  else if(st.t==='free'){ if(st.auto && TUT_AUTOS[st.auto]) TUT_AUTOS[st.auto](); }
+  else if(st.t==='ask'){
+    const ok = st.options.filter(function(o){ return o.ok; })[0];
+    if(ok){ if(ok.fix) applyFix(ok.fix); tutNext(); }
+  }
+}
+function tutHint(){
+  const st = curStep();
+  if(!st) return;
+  T.hintTier++;
+  if(T.hintTier===1){
+    openModal('<h3>💡 提示（第 1 层 · 说说目标）</h3>'+
+      '<div class="hintmodal"><div class="htier">这一步要干嘛</div><div class="htext">'+
+      (st.hint1 || '别急，再读一遍小笨说的话——它让你做什么？照着做就对。')+'</div></div>'+
+      '<div class="mbtns"><button class="btn primary" id="hOk">知道了，再试试</button>'+
+      '<button class="btn ghost" id="hMore">还是卡着，再提示一层</button></div>');
+    q('#hOk').onclick = closeModal;
+    q('#hMore').onclick = function(){ closeModal(); tutHint(); };
+    return;
+  }
+  if(T.hintTier===2){
+    let msg = st.hint2 || '照着高亮的地方点，别的不用管。';
+    closeModal();
+    if(st.t==='click') spotByTid('pack:'+st.pack);
+    else if(st.t==='slot'){ const slot=q('#tutWS .addslot'); if(slot) spotEl(slot); }
+    else if(st.t==='run'||st.t==='free') spotByTid('run');
+    toast('💡 '+msg);
+    return;
+  }
+  openModal('<h3>🤝 最后一层：帮你放好</h3>'+
+    '<div class="hintmodal"><div class="htier">不扣星</div><div class="htext">没关系，这层就是干这个的——<b>新手教程里求助，绝对不扣星</b>。我帮你把这一步做好，你看一遍就会了。</div></div>'+
+    '<div class="mbtns"><button class="btn primary" id="hAuto">🤝 帮我放好</button>'+
+    '<button class="btn ghost" id="hCancel">我再自己试试</button></div>');
+  q('#hAuto').onclick = tutAutoDo;
+  q('#hCancel').onclick = closeModal;
+}
+
+function slotClickByEl(el){
+  const owner = el.getAttribute('data-owner');
+  const target = el.getAttribute('data-target');
+  T.dest = 'in:'+target+':'+owner;
+  tutNext();
+}
+
+/* ---------- 渲染：自由工坊（完整工作台） ---------- */
+let FW = { r:null, tab:'track', pos:0, playing:false, timer:null, dirtyTimer:null };
+
+function openBuilder(){
+  showSection('builder');
+  if(SAVE.free){
+    try{
+      S.vars = SAVE.free.vars || {};
+      S.blocks = SAVE.free.blocks || [];
+      q('#goalInput').value = SAVE.free.goal || '';
+      rebumpIds();
+    }catch(e){ S.vars={}; S.blocks=[]; }
+  }
+  renderPalette();
+  renderVarList();
+  renderWS();
+  FW.r = null; FW.pos = 0; FW.tab = 'track';
+  renderTabs();
+  renderPane();
+}
+function rebumpIds(){
+  let mx = 0;
+  (function walk(list){ list.forEach(function(b){ const n=parseInt(String(b.id).slice(1),10)||0; if(n>mx) mx=n; if(b.body) walk(b.body); if(b.elseBody) walk(b.elseBody); }); })(S.blocks);
+  uid = Math.max(uid, mx);
+}
+function markDirty(){
+  clearTimeout(FW.dirtyTimer);
+  FW.dirtyTimer = setTimeout(saveDraft, 500);
+}
+function saveDraft(){
+  SAVE.free = { vars:S.vars, blocks:S.blocks, goal:(q('#goalInput')||{}).value||'' };
+  persist();
+}
+
+/* ---------- 零件库 ---------- */
+function renderPalette(){
+  let h = '';
+  CATS.forEach(function(cat){
+    h += '<div class="palcats">'+cat.name+'</div><div class="palette" style="grid-column:1 / -1;">';
+    h += cat.packs.map(function(pid){
+      const d = PACKS[pid];
+      return '<button class="packbtn" style="--cc:'+d.cc+'" onclick="fwAddPack(\''+pid+'\')">'+
+        '<div class="pi">'+d.icon+'</div><div class="pn">'+esc(d.name)+'</div><div class="pd">'+esc(d.desc)+'</div></button>';
+    }).join('');
+    h += '</div>';
+  });
+  /* 嵌套 CSS 已保证两列，上面 grid-column 不需要 */
+  q('#palette').innerHTML = h;
+}
+function fwAddPack(pid){
+  S.blocks.push(newBlock(PACKS[pid].kind));
+  renderWS();
+  markDirty();
+}
+
+/* ---------- 变量编辑 ---------- */
+function parseVal(str){
+  const s = String(str==null?'':str).trim();
+  if(s==='') return 0;
+  if(/^\[[\s\S]*\]$/.test(s)){
+    const inner = s.slice(1,-1).trim();
+    if(!inner) return [];
+    return inner.split(/[,，]/).map(parseVal);
+  }
+  const n = toNum(s);
+  return n!==null ? n : s;
+}
+function fmtVal(v){
+  if(Array.isArray(v)) return '['+v.map(fmtVal).join(', ')+']';
+  return String(v);
+}
+function renderVarList(){
+  const keys = Object.keys(S.vars);
+  q('#varList').innerHTML = keys.length ? keys.map(function(k){
+    return '<div class="vrow"><span class="vic">📦</span><div style="flex:1; min-width:0;">'+
+      '<div class="vname">'+esc(k)+'</div>'+
+      '<input style="width:100%; border:1px solid var(--line); border-radius:8px; padding:4px 8px; font-size:12px; font-family:Consolas,monospace; margin-top:3px; background:#fff;" '+
+      'value="'+esc(fmtVal(S.vars[k]))+'" oninput="fwSetVar(this, \''+esc(k)+'\')">'+
+      '</div><button class="mini" onclick="fwDelVar(\''+esc(k)+'\')">✕</button></div>';
+  }).join('') : '<div class="ph" style="padding:18px 6px;">还没有数据<br>点下面的按钮新建</div>';
+  renderVarNames();
+}
+function renderVarNames(){
+  q('#varNames').innerHTML = Object.keys(S.vars).map(function(k){
+    return '<option value="'+esc(k)+'">';
+  }).join('');
+}
+function fwSetVar(input, name){
+  S.vars[name] = parseVal(input.value);
+  renderVarNames();
+  markDirty();
+}
+function fwDelVar(name){
+  delete S.vars[name];
+  renderVarList();
+  markDirty();
+}
+function fwNewVarModal(){
+  openModal('<h3>＋ 新建变量</h3>'+
+    '<div class="varedit"><input class="vn" id="nvName" placeholder="名字，如：价格"></div>'+
+    '<div class="varedit"><input class="vv" id="nvVal" placeholder="值，如：0 或 [120, 45, 200]"></div>'+
+    '<div class="mbtns"><button class="btn primary" id="nvOk">创建</button><button class="btn ghost" id="nvCancel">取消</button></div>');
+  q('#nvOk').onclick = function(){
+    const name = (q('#nvName').value||'').trim();
+    if(!name){ toast('起个名字～'); return; }
+    S.vars[name] = parseVal(q('#nvVal').value);
+    closeModal();
+    renderVarList();
+    markDirty();
+  };
+  q('#nvCancel').onclick = closeModal;
+}
+function fwDemoVars(){
+  S.vars = { 价格:[120,45,200,88,150,30] };
+  renderVarList();
+  markDirty();
+  toast('已载入示例：价格 = [120, 45, 200, 88, 150, 30]');
+}
+
+/* ---------- 工作区编辑器 ---------- */
+function kindColor(kind){
+  if(kind==='print'||kind==='set') return '#3b82f6';
+  if(kind==='if') return '#8b5cf6';
+  if(kind==='while'||kind==='for') return '#ef4444';
+  return '#10b981';
+}
+function prowHTML(label, inner){
+  return '<div class="prow"><label>'+label+'</label>'+inner+'</div>';
+}
+function inputHTML(id, key, val, ph){
+  return '<input value="'+esc(val==null?'':val)+'" placeholder="'+esc(ph||'')+'" oninput="setParam(\''+id+'\',\''+key+'\',this.value)">';
+}
+function listInputHTML(id, key, val){
+  return '<input list="varNames" value="'+esc(val==null?'':val)+'" placeholder="变量名，如：价格" oninput="setParam(\''+id+'\',\''+key+'\',this.value)">';
+}
+function condEditHTML(id, c, keyName){
+  const ops = OPS.map(function(o){
+    return '<option value="'+o+'"'+(c.op===o?' selected':'')+'>'+o+'（'+OP_HUMAN[o]+'）</option>';
+  }).join('');
+  return '<div class="prow"><label>条件</label><div class="cond">'+
+    '<input value="'+esc(c.left)+'" placeholder="左边" oninput="setCond(\''+id+'\',\''+keyName+'\',\'left\',this.value)">'+
+    '<select onchange="setCond(\''+id+'\',\''+keyName+'\',\'op\',this.value)">'+ops+'</select>'+
+    '<input value="'+esc(c.right)+'" placeholder="右边" oninput="setCond(\''+id+'\',\''+keyName+'\',\'right\',this.value)"></div></div>';
+}
+function bodyEditHTML(b, label, target){
+  const kinds = ['print','set','if','while','for','filter','count','sum','find'];
+  const opts = kinds.map(function(k){
+    return '<option value="'+k+'">'+KIND_ICON[k]+' '+KIND_NAME[k]+'</option>';
+  }).join('');
+  return '<div class="bodybox"><div class="bodylabel">'+label+'</div>'+
+    (b.body||[]).map(blockEditorHTML).join('')+
+    '<div class="addrow"><select id="addsel-'+b.id+'-'+target+'">'+opts+'</select>'+
+    '<button class="mini" onclick="addChild(\''+b.id+'\',\''+target+'\')">＋ 加零件</button></div></div>';
+}
+function blockEditorHTML(b){
+  const p = b.params || {};
+  let inner = '';
+  switch(b.kind){
+    case 'print':
+      inner = prowHTML('内容', inputHTML(b.id,'expr',p.expr,'你好 / "带引号的话" / 盒子名'));
+      break;
+    case 'set':
+      inner = prowHTML('盒子名', inputHTML(b.id,'var',p.var,'如：总价')) +
+              prowHTML('放什么', inputHTML(b.id,'expr',p.expr,'如：0 或 总价 + 1'));
+      break;
+    case 'if':
+      inner = condEditHTML(b.id, p.cond, 'cond') +
+        '<label class="chk"><input type="checkbox" '+(p.hasElse?'checked':'')+' onchange="toggleElse(\''+b.id+'\',this.checked)"> 铺上「否则」那条路（else）</label>' +
+        bodyEditHTML(b, '条件成立就做', 'body') +
+        (p.hasElse ? bodyEditHTML({id:b.id, body:b.elseBody||[]}, '否则做这件事', 'else') : '');
+      break;
+    case 'while':
+      inner = '<div class="stopbox"><div class="stoptag">🛑 出口：什么时候停</div>'+condEditHTML(b.id, p.stop, 'stop')+'</div>' +
+        bodyEditHTML(b, '循环身体（一直做的部分）', 'body');
+      break;
+    case 'for':
+      inner = prowHTML('名单', listInputHTML(b.id,'list',p.list)) +
+              prowHTML('放进盒子', inputHTML(b.id,'item',p.item,'每一个')) +
+              bodyEditHTML(b, '每拿到一个，做', 'body');
+      break;
+    case 'filter':
+      inner = prowHTML('从哪个名单', listInputHTML(b.id,'list',p.list)) +
+              condEditHTML(b.id, p.cond, 'cond') +
+              prowHTML('装进新盒子', inputHTML(b.id,'out',p.out,'如：贵的'));
+      break;
+    case 'count':
+      inner = prowHTML('数哪个名单', listInputHTML(b.id,'list',p.list)) +
+              condEditHTML(b.id, p.cond, 'cond') +
+              prowHTML('个数装进', inputHTML(b.id,'out',p.out,'如：个数'));
+      break;
+    case 'sum':
+      inner = prowHTML('加哪个名单', listInputHTML(b.id,'list',p.list)) +
+              prowHTML('从几开始', inputHTML(b.id,'start',p.start,'0')) +
+              prowHTML('总和装进', inputHTML(b.id,'out',p.out,'如：总价'));
+      break;
+    case 'find':
+      inner = prowHTML('在哪个名单', listInputHTML(b.id,'list',p.list)) +
+              condEditHTML(b.id, p.cond, 'cond') +
+              prowHTML('找到的装进', inputHTML(b.id,'out',p.out,'如：找到的'));
+      break;
+  }
+  return '<div class="block" id="fb-'+b.id+'" style="--c:'+kindColor(b.kind)+'">'+
+    '<div class="bhead">'+KIND_ICON[b.kind]+' <b>'+KIND_NAME[b.kind]+'</b>'+
+    '<span class="bctl">'+
+    '<button class="mini" onclick="moveBlock(\''+b.id+'\',-1)">▲</button>'+
+    '<button class="mini" onclick="moveBlock(\''+b.id+'\',1)">▼</button>'+
+    '<button class="mini" onclick="removeBlock(\''+b.id+'\')">✕</button></span></div>'+
     '<div class="binner">'+inner+'</div></div>';
 }
-function renderWorkspace(){
+function renderWS(){
   const ws = q('#workspace');
   if(!S.blocks.length){
-    ws.innerHTML = '<div class="emptyws">装配区空空如也<br>从左边零件库点一个零件开始拼装<br>记住：有循环，就先写出口 🛑</div>';
-  }else{
-    ws.innerHTML = S.blocks.map(b=>blockHTML(b)).join('');
-  }
-}
-function invalidateRun(clearPanes){
-  stopPlay();
-  S.trace = null; S.playIdx = -1; S.verdict = null;
-  if(clearPanes!==false){
-    q('#pane-exec').innerHTML = '<div class="ph">按下 ▶ 运行<br>这里会一步步显示：变量怎么变、条件成不成立、循环跑到第几圈、输出说了什么</div>';
-    q('#pane-traj').innerHTML = '<div class="ph">还没有轨迹</div>';
-    q('#pane-py').innerHTML = '<div class="ph">还没有生成代码</div>';
-    q('#pane-verdict').innerHTML = '<div class="ph">还没有判定结果</div>';
-  }
-}
-
-/* ---------- 事件：零件交互 ---------- */
-q('#palette').addEventListener('click', e=>{
-  const btn = e.target.closest('[data-pack]');
-  if(!btn) return;
-  const kind = btn.dataset.pack;
-  if(kind==='while'){
-    openStopModal(b=>{ S.blocks.push(b); renderWorkspace(); saveSandbox(); invalidateRun(); toast('已装上 while 循环——出口已经写好啦'); });
+    ws.innerHTML = '<div class="emptyws">工作区还是空的<br>从左边的 🧩 零件库点一个零件开始<br><br>💡 提醒自己：循环之前，先想清楚<b>什么时候停</b></div>';
     return;
   }
-  S.blocks.push(smartNew(kind));
-  renderWorkspace(); saveSandbox(); invalidateRun();
-});
-q('#workspace').addEventListener('click', e=>{
-  const btn = e.target.closest('[data-act]');
-  if(!btn) return;
-  const id = +btn.dataset.id;
-  const act = btn.dataset.act;
-  const owner = findOwner(S.blocks, id);
-  if(!owner) return;
-  const {list, index} = owner;
-  if(act==='del'){ list.splice(index,1); }
-  else if(act==='up' && index>0){ const t=list[index-1]; list[index-1]=list[index]; list[index]=t; }
-  else if(act==='down' && index<list.length-1){ const t=list[index+1]; list[index+1]=list[index]; list[index]=t; }
-  else if(act==='addsub'){
-    const b = findBlock(S.blocks, id);
-    if(!b) return;
-    const sel = btn.parentElement.querySelector('select');
-    const target = btn.dataset.key==='elseBody' ? b.elseBody : b.body;
-    if(!target) return;
-    if(sel.value==='while'){
-      openStopModal(nb=>{ target.push(nb); renderWorkspace(); saveSandbox(); invalidateRun(); });
+  ws.innerHTML = S.blocks.map(blockEditorHTML).join('');
+}
+
+/* ---------- 编辑操作（给内联 oninput 用） ---------- */
+function setParam(id, key, val){ const b=findBlock(id); if(b){ b.params[key]=val; markDirty(); } }
+function setCond(id, key, field, val){
+  const b=findBlock(id); if(!b) return;
+  b.params[key] = b.params[key] || {};
+  b.params[key][field] = val;
+  markDirty();
+}
+function toggleElse(id, checked){
+  const b=findBlock(id); if(!b) return;
+  b.params.hasElse = checked;
+  if(checked && !b.elseBody) b.elseBody = [];
+  renderWS();
+  markDirty();
+}
+function addChild(id, target){
+  const b=findBlock(id); if(!b) return;
+  const sel = document.getElementById('addsel-'+id+'-'+target);
+  const kind = sel ? sel.value : 'print';
+  if(target==='else'){ b.elseBody = b.elseBody||[]; b.elseBody.push(newBlock(kind)); }
+  else { b.body = b.body||[]; b.body.push(newBlock(kind)); }
+  renderWS();
+  markDirty();
+}
+function removeBlock(id){
+  const o = findOwner(id);
+  if(o){ o.arr.splice(o.idx, 1); renderWS(); markDirty(); }
+}
+function moveBlock(id, dir){
+  const o = findOwner(id);
+  if(!o) return;
+  const ni = o.idx + dir;
+  if(ni < 0 || ni >= o.arr.length) return;
+  const tmp = o.arr[o.idx];
+  o.arr[o.idx] = o.arr[ni];
+  o.arr[ni] = tmp;
+  renderWS();
+  markDirty();
+}
+
+/* ---------- 右侧页签 ---------- */
+const RT_TABS = [ {id:'track', name:'📺 逐句追踪'}, {id:'console', name:'🖥️ 控制台'}, {id:'python', name:'🐍 Python'}, {id:'verdict', name:'🏆 五维判定'} ];
+function renderTabs(){
+  q('#rtTabs').innerHTML = RT_TABS.map(function(t){
+    return '<button class="tab'+(FW.tab===t.id?' on':'')+'" onclick="fwTab(\''+t.id+'\')">'+t.name+'</button>';
+  }).join('');
+}
+function fwTab(id){ FW.tab = id; renderTabs(); renderPane(); }
+
+function renderPane(){
+  const pane = q('#rtPane');
+  if(FW.tab==='track'){
+    if(!FW.r){
+      pane.innerHTML = '<div class="ph">还没运行过<br>搭好零件，按左下角 ▶ 运行<br>小笨每做一步，这里都会记下来</div>';
       return;
     }
-    target.push(smartNew(sel.value));
-  }
-  renderWorkspace(); saveSandbox(); invalidateRun();
-});
-/* 输入即改模型 */
-document.addEventListener('input', e=>{
-  const t = e.target;
-  if(t.dataset.bid!==undefined && t.dataset.bid!==''){ /* 预留 */ }
-  if(t.dataset.id!==undefined && t.closest && t.closest('#workspace')){
-    const b = findBlock(S.blocks, +t.dataset.id);
-    if(!b) return;
-    const k = t.dataset.k;
-    if(t.dataset.ck){
-      const obj = k==='cond' ? b.params.cond : (k==='stop' ? b.params.stop : b.params[k]);
-      if(obj) obj[t.dataset.ck] = t.value;
-    }else{
-      if(t.type==='checkbox') b.params[k] = t.checked;
-      else b.params[k] = t.value;
-    }
-    S.trace = null;
-    saveSandbox();
+    const s = FW.r.steps[Math.min(FW.pos, FW.r.steps.length-1)] || {vars:{}, output:[]};
+    let watchRows = Object.keys(s.vars).map(function(k){
+      return '<tr><td>'+esc(k)+'</td><td>'+esc(fmtVal(s.vars[k]))+'</td></tr>';
+    }).join('');
+    if(!watchRows) watchRows = '<tr><td colspan="2" style="color:var(--muted);">（没有变量）</td></tr>';
+    const rows = FW.r.steps.map(function(st, i){
+      const blk = findBlock(st.bid);
+      return '<div class="trow'+(i===FW.pos?' on':'')+'" onclick="fwJump('+i+')">'+(i+1)+'. '+
+        (blk ? KIND_ICON[blk.kind]+' '+KIND_NAME[blk.kind] : '·')+
+        (st.output.length? '　→ '+esc(norm(st.output[st.output.length-1])) : '')+'</div>';
+    }).join('');
+    pane.innerHTML =
+      '<div class="pbar">'+
+      '<button onclick="fwJump(0)">⏮</button>'+
+      '<button onclick="fwStep(-1)">◀</button>'+
+      '<button onclick="fwPlay()" id="pbPlay">'+(FW.playing?'⏸ 暂停':'▶ 播放')+'</button>'+
+      '<button onclick="fwStep(1)">▶</button>'+
+      '<button onclick="fwJump('+(FW.r.steps.length-1)+')">⏭</button>'+
+      '<span id="pbPos">'+(FW.pos+1)+' / '+FW.r.steps.length+'</span></div>'+
+      '<table class="watchtbl"><tr><th>盒子</th><th>当前值</th></tr>'+watchRows+'</table>'+
+      '<div style="max-height:260px; overflow-y:auto;">'+rows+'</div>';
     return;
   }
-  if(t.dataset.vidx!==undefined){
-    const row = S.varRows[+t.dataset.vidx];
-    if(!row) return;
-    if(t.dataset.vk==='name') row.name = t.value; else row.raw = t.value;
-    applyVarRows(); S.trace = null; saveSandbox();
+  if(FW.tab==='console'){
+    const out = FW.r ? FW.r.output : [];
+    const err = FW.r ? FW.r.error : null;
+    pane.innerHTML = '<div class="console">'+(err? '<span style="color:#fca5a5;">'+esc(err)+'</span>' :
+      (out.length? esc(out.map(norm).join('\n')) : '<span class="cempty">（还没运行，或小笨什么都没说）</span>'))+'</div>';
     return;
   }
-  if(t.dataset.role==='goal'){ S.goal = t.value; S.trace = null; saveSandbox(); }
-});
-/* 下拉/勾选变动后重渲染（文本输入失焦后也刷新派生显示） */
-document.addEventListener('change', e=>{
-  const t = e.target;
-  if(t.tagName==='SELECT' || t.type==='checkbox' || (t.tagName==='INPUT' && t.closest && t.closest('#workspace'))){
-    renderWorkspace();
+  if(FW.tab==='python'){
+    if(!S.blocks.length){ pane.innerHTML = '<div class="ph">工作区空着呢<br>放几个零件，Python 就长出来了</div>'; return; }
+    pane.innerHTML = '<div class="pybar"><button class="btn ghost" onclick="fwCopyPy()">📋 复制代码</button>'+
+      '<span class="note">这就是你的程序翻译成 Python 的样子</span></div>'+
+      '<pre class="code">'+esc(genPython())+'</pre>';
+    return;
   }
-});
-/* 先写出口弹层 */
-function openStopModal(cb){
-  openModal(
-    '<h3>♻️ 先写出口</h3>' +
-    '<p><b>别急着告诉电脑怎么做，先想清楚它什么时候该停。</b></p>' +
-    '<p>这个循环<b>什么时候结束</b>？<br>例：倒计时 == 0（数到 0 就停）、金币 >= 100（攒够就停）</p>' +
-    '<div class="cond" style="display:flex">' +
-    '<input id="msLeft" placeholder="变量，比如：倒计时" style="flex:1">' +
-    '<select id="msOp">' + OPS.map(o=>'<option value="'+esc(o)+'"'+(o==='=='?' selected':'')+'>'+esc(o)+'</option>').join('') + '</select>' +
-    '<input id="msRight" placeholder="值，比如：0" style="flex:1">' +
-    '</div>' +
-    '<div class="mbtns"><button class="btn primary" id="msOk">想清楚了，开始拼装</button><button class="btn ghost" id="msCancel">取消</button></div>'
-  );
-  q('#msOk').onclick = ()=>{
-    const stop = {left:q('#msLeft').value.trim(), op:q('#msOp').value, right:q('#msRight').value.trim()};
-    if(!stop.left || !stop.right){ toast('出口条件还没填完整——什么时候停？'); return; }
-    const b = newBlock('while');
-    b.params.stop = stop;
-    closeModal();
-    cb(b);
-  };
-  q('#msCancel').onclick = closeModal;
+  if(FW.tab==='verdict'){
+    const rows = computeVerdict();
+    const passCount = rows.filter(function(x){ return x.pass===true; }).length;
+    let fbtext = '';
+    if(passCount===rows.length) fbtext = '🎉 五维全过！这个程序已经可以在真实世界跑了。';
+    else if(!rows[0].pass) fbtext = '先解决「结构完整」——有零件没拼好，小笨没法开工。';
+    else if(!rows[1].pass) fbtext = '跑都跑不通？看看红色的错误提示，小笨在告诉你哪里看不懂。';
+    else if(!rows[2].pass) fbtext = '死循环警报！回去检查每个循环的<b>出口</b>：它到得了吗？';
+    else if(rows[4].pass===false) fbtext = '程序能跑，但结果跟目标对不上——检查逻辑，别只看语法。';
+    else fbtext = '还差最后一格：写上任务目标，我才能帮你验货。';
+    pane.innerHTML = rows.map(function(x){
+      const mark = x.pass===true ? '<span class="pass">✓</span>' : (x.pass===false ? '<span class="fail">✗</span>' : '—');
+      return '<div class="vrow"><span class="vic">'+x.ic+'</span><div>'+
+        '<div class="vname">'+mark+' '+x.name+'</div>'+
+        '<div class="vdetail">'+x.detail+'</div></div></div>';
+    }).join('') +
+    '<div class="fb"><h4>小笨的评语</h4><div class="fbtext"><div>'+fbtext+'</div></div></div>';
+    return;
+  }
 }
-
-/* ---------- 运行 ---------- */
-q('#runBtn').addEventListener('click', doRun);
-q('#clearOutBtn').addEventListener('click', ()=>{ invalidateRun(); toast('已清空结果'); });
-q('#backBtn').addEventListener('click', ()=>{ stopPlay(); renderHome(); q('#builder').classList.add('hidden'); q('#home').classList.remove('hidden'); S.screen='home'; });
-
-function doRun(){
-  stopPlay();
-  const issues = checkStructure();
-  const res = runProgram();
-  S.trace = res;
-  S.playIdx = -1;
-  const v = computeVerdict(issues, res);
-  S.verdict = v;
-  const gained = applyResult(v);
-  updateHud();
-
-  /* 执行现场 */
-  q('#pane-exec').innerHTML =
-    '<div class="stepdesc" id="stepDesc">准备开始…</div>' +
-    '<div class="pbar">' +
-    '<button id="pbStart">⏮</button><button id="pbPrev">◀</button><button id="pbPlay">▶</button><button id="pbNext">▶|</button><button id="pbEnd">⏭</button>' +
-    '<span id="pbPos">第 0 / '+res.steps.length+' 步</span></div>' +
-    '<h3 style="font-size:13px; margin-bottom:6px">👀 变量观察窗</h3>' +
-    '<table class="watchtbl" id="watchTbl"></table>' +
-    '<h3 style="font-size:13px; margin-bottom:6px">📣 输出控制台</h3>' +
-    '<div class="console" id="outConsole"></div>';
-  bindPlayBtns();
-
-  /* 轨迹 */
-  q('#pane-traj').innerHTML = res.steps.length
-    ? res.steps.map((st,i)=>'<div class="trow" data-i="'+i+'"><b>'+(i+1)+'.</b> '+esc(st.desc)+'</div>').join('')
-    : '<div class="ph">没有产生任何步骤</div>';
-  q('#pane-traj').querySelectorAll('.trow').forEach(r=>{
-    r.onclick = ()=>{ gotoStep(+r.dataset.i); };
-  });
-
-  /* Python */
-  q('#pane-py').innerHTML =
-    '<div class="pybar"><button class="btn primary" id="copyPy">📋 复制代码</button><span class="note">这就是你拼的逻辑对应的真实 Python</span></div>' +
-    '<pre class="code">'+esc(genPython())+'</pre>';
-  q('#copyPy').onclick = ()=>{
-    navigator.clipboard && navigator.clipboard.writeText(genPython()).then(()=>toast('代码已复制')).catch(()=>toast('复制失败，手动选择复制吧'));
-  };
-
-  /* 判定 */
-  renderVerdictTab(v, res);
-
-  selectTab('exec');
-  if(res.steps.length) gotoStep(0);
-  if(S.level){
-    if(v.answer.pass && v.runs.pass){
-      setTimeout(()=>openWinModal(v, gained), 700);
-    }else{
-      toast('差一点！看看右边「判定」——哪颗星还没点亮');
-      selectTab('verdict');
-    }
+function computeVerdict(){
+  const r = FW.r || runProgram();
+  const goal = ((q('#goalInput')||{}).value||'').trim();
+  const iss = checkStructure();
+  const rows = [];
+  rows.push({ ic:'🧱', name:'结构完整', pass:iss.length===0, detail:iss.length ? esc(iss[0]) : '所有零件都拼好了' });
+  rows.push({ ic:'🏃', name:'跑得通', pass:!r.error, detail:r.error ? friendlyTutErr(r.error) : (r.output.length ? '小笨说了 '+r.output.length+' 句话' : '没说话，但也没报错') });
+  rows.push({ ic:'🛑', name:'停得下来', pass:!r.dead, detail:r.dead ? '死循环！出口到不了' : '所有循环都有出口，也都到得了' });
+  rows.push({ ic:'🧠', name:'逻辑合理', pass:S.blocks.length>0, detail:S.blocks.length ? '有 '+S.blocks.length+' 个零件在工作' : '工作区是空的' });
+  let goalPass = null, goalDetail = '';
+  if(!goal){
+    goalDetail = '在左上角写一句任务目标，我帮你验货';
   }else{
-    toast(v.runs.pass ? '跑通了！看看轨迹和 Python' : '没跑通，看看判定里的提示');
-    if(!v.runs.pass) selectTab('verdict');
+    const nums = goal.match(/\d+(\.\d+)?/g) || [];
+    const all = r.output.map(norm).concat(Object.keys(r.state).map(function(k){ return norm(r.state[k]); }));
+    if(nums.length && all.some(function(v){ return nums.indexOf(v)>=0; })){
+      goalPass = true; goalDetail = '结果里出现了「'+nums.join('、')+'」，对上了';
+    }else{
+      goalPass = false; goalDetail = '结果里没看到目标数字，再检查检查';
+    }
   }
+  rows.push({ ic:'🎯', name:'达成目标', pass:goalPass, detail:goalDetail });
+  return rows;
 }
-function renderVerdictTab(v, res){
-  const dims = ['structure','runs','terminates','logic','answer'];
-  let html = '<h3 style="font-size:14px; margin-bottom:8px">⚖️ 五维判定</h3>';
-  html += dims.map(d=>{
-    const r = v[d];
-    return '<div class="vrow"><div class="vic">'+r.icon+'</div><div><div class="vname"><span class="'+(r.pass?'pass':'fail')+'">'+(r.pass?'✓ ':'✗ ')+'</span>'+r.name+'</div><div class="vdetail">'+esc(r.detail)+'</div></div></div>';
-  }).join('');
-  /* 学习反馈：人话 → 逻辑 → Python */
-  const goalText = S.level ? S.level.goal : (S.goal || '（还没写目标）');
-  const treeLines = [];
-  (function tree(list, ind){
-    list.forEach(b=>{
-      let line = '　'.repeat(ind) + PACKS[b.kind].icon + ' ' + PACKS[b.kind].name;
-      if(b.kind==='while') line += '（出口：' + condDesc(b.params.stop) + '）';
-      if(b.kind==='if') line += '（当 ' + condDesc(b.params.cond) + '）';
-      treeLines.push(line);
-      if(b.body && b.body.length) tree(b.body, ind+1);
-      if(b.elseBody && b.elseBody.length){ treeLines.push('　'.repeat(ind+1)+'否则：'); tree(b.elseBody, ind+2); }
-    });
-  })(S.blocks, 0);
-  html += '<div class="fb"><h4>🗣️ 人话（你的目标）</h4><div class="fbtext">'+esc(goalText)+'</div></div>';
-  html += '<div class="fb"><h4>🧩 逻辑（你的逻辑树）</h4><div class="tree">'+esc(treeLines.join('\n') || '（空）')+'</div></div>';
-  html += '<div class="fb"><h4>🐍 Python（自动翻译）</h4><div class="fbtext">你拼的这套逻辑已经自动翻译成真实 Python 代码，见「Python」页。<br>把这套思维带进真实编程，就是这么回事。</div></div>';
-  q('#pane-verdict').innerHTML = html;
-}
-function openWinModal(v, gained){
-  const l = S.level;
-  const dims = ['structure','runs','terminates','logic','answer'];
-  const stars = dims.map(d=>v[d].pass?'⭐':'☆').join('');
-  const rows = dims.map(d=>'<div class="wrow"><span class="st" style="color:'+(v[d].pass?'var(--ok)':'var(--bad)')+'">'+(v[d].pass?'✓':'✗')+'</span><span><b>'+v[d].icon+' '+v[d].name+'</b> — '+esc(v[d].detail)+'</span></div>').join('');
-  const idx = LEVELS.findIndex(x=>x.id===l.id);
-  const hasNext = idx < LEVELS.length-1;
-  openModal(
-    '<div class="wtitle">🎉 过关！'+esc(l.title)+'</div>' +
-    '<div class="wstars">'+stars+'</div>' +
-    '<div class="wsub">「先想清楚什么时候停」——你又做到一次</div>' +
-    rows +
-    '<div class="wxp">+'+gained+' 经验值</div>' +
-    '<div class="mbtns">' +
-    (hasNext?'<button class="btn primary" id="nextLv">➡️ 下一关</button>':'<button class="btn primary" id="backMap2">🗺️ 全部通关！返回地图</button>') +
-    '<button class="btn ghost" id="againLv">🔁 再玩一次</button>' +
-    '<button class="btn ghost" id="backMap">返回地图</button></div>'
-  );
-  if(hasNext) q('#nextLv').onclick = ()=>{ closeModal(); startLevel(idx+1); };
-  else if(q('#backMap2')) q('#backMap2').onclick = ()=>{ closeModal(); q('#backBtn').click(); };
-  q('#againLv').onclick = ()=>{ closeModal(); startLevel(idx); };
-  if(q('#backMap')) q('#backMap').onclick = ()=>{ closeModal(); q('#backBtn').click(); };
+function fwCopyPy(){
+  const code = genPython();
+  try{
+    if(navigator.clipboard) navigator.clipboard.writeText(code);
+    toast('已复制 Python 代码');
+  }catch(e){ toast('复制失败，手动选择吧'); }
 }
 
-/* ---------- 播放控制 ---------- */
-function speedMs(){ return +q('#speedSel').value || 300; }
-function bindPlayBtns(){
-  q('#pbStart').onclick = ()=>{ stopPlay(); gotoStep(0); };
-  q('#pbPrev').onclick  = ()=>{ stopPlay(); if(S.playIdx>0) gotoStep(S.playIdx-1); };
-  q('#pbNext').onclick  = ()=>{ stopPlay(); if(S.trace && S.playIdx < S.trace.steps.length-1) gotoStep(S.playIdx+1); };
-  q('#pbEnd').onclick   = ()=>{ stopPlay(); if(S.trace) gotoStep(S.trace.steps.length-1); };
-  q('#pbPlay').onclick  = togglePlay;
+/* ---------- 运行 · 播放 ---------- */
+function fwRun(){
+  if(FW.playing){ fwStop(); }
+  FW.r = runProgram();
+  FW.pos = 0;
+  FW.tab = 'track';
+  renderTabs();
+  renderPane();
+  fwPlay();
 }
-function togglePlay(){
-  if(!S.trace || !S.trace.steps.length) return;
-  if(S.playing){ stopPlay(); return; }
-  S.playing = true;
-  q('#pbPlay').textContent = '⏸';
-  S.timer = setInterval(()=>{
-    if(!S.trace){ stopPlay(); return; }
-    if(S.playIdx < S.trace.steps.length-1) gotoStep(S.playIdx+1);
-    else stopPlay();
-  }, speedMs());
+function fwStop(){
+  if(FW.timer){ clearInterval(FW.timer); FW.timer = null; }
+  FW.playing = false;
+  const pb = q('#pbPlay');
+  if(pb) pb.textContent = '▶ 播放';
 }
-function stopPlay(){
-  S.playing = false;
-  if(S.timer){ clearInterval(S.timer); S.timer = null; }
-  const pb = q('#pbPlay'); if(pb) pb.textContent = '▶';
+function fwPlay(){
+  fwStop();
+  if(!FW.r || !FW.r.steps.length){ renderPane(); return; }
+  const speed = parseInt(q('#speedSel').value, 10);
+  if(!speed){ FW.pos = FW.r.steps.length-1; renderPane(); return; }
+  FW.playing = true;
+  const pb = q('#pbPlay');
+  if(pb) pb.textContent = '⏸ 暂停';
+  FW.timer = setInterval(function(){
+    if(FW.pos >= FW.r.steps.length-1){ fwStop(); renderPane(); return; }
+    FW.pos++;
+    fwPaint();
+    renderPane();
+  }, speed);
 }
-function gotoStep(i){
-  if(!S.trace || !S.trace.steps.length) return;
-  S.playIdx = Math.max(0, Math.min(i, S.trace.steps.length-1));
-  const st = S.trace.steps[S.playIdx];
-  document.querySelectorAll('.block.now').forEach(el=>el.classList.remove('now'));
-  if(st.blockId){
-    const el = q('#workspace [data-id="'+st.blockId+'"]');
-    if(el){ el.classList.add('now'); el.scrollIntoView({block:'nearest', behavior:'smooth'}); }
+function fwStep(dir){
+  fwStop();
+  if(!FW.r) return;
+  FW.pos = Math.max(0, Math.min(FW.r.steps.length-1, FW.pos+dir));
+  renderPane();
+}
+function fwJump(i){
+  fwStop();
+  if(!FW.r) return;
+  FW.pos = Math.max(0, Math.min(FW.r.steps.length-1, i));
+  renderPane();
+}
+function fwPaint(){
+  qq('#workspace .block').forEach(function(el){ el.classList.remove('now'); });
+  if(FW.r && FW.r.steps[FW.pos]){
+    const el = q('#fb-'+FW.r.steps[FW.pos].bid);
+    if(el) el.classList.add('now');
   }
-  const sd = q('#stepDesc'); if(sd) sd.textContent = st.desc;
-  const pos = q('#pbPos'); if(pos) pos.textContent = '第 ' + (S.playIdx+1) + ' / ' + S.trace.steps.length + ' 步';
-  /* 变量观察窗 */
-  const wt = q('#watchTbl');
-  if(wt){
-    const keys = Object.keys(st.vars);
-    wt.innerHTML = '<tr><th>变量</th><th>现在的值</th></tr>' +
-      (keys.length ? keys.map(k=>'<tr><td>'+esc(k)+'</td><td>'+esc(fmt(st.vars[k]))+'</td></tr>').join('')
-                   : '<tr><td colspan="2" style="color:var(--muted)">（还没有变量）</td></tr>');
-  }
-  /* 输出控制台 */
-  const oc = q('#outConsole');
-  if(oc) oc.innerHTML = st.output.length ? st.output.map(x=>'> '+esc(fmt(x))).join('\n') : '<span class="cempty">（还没输出任何东西）</span>';
-  /* 轨迹高亮 */
-  q('#pane-traj').querySelectorAll('.trow').forEach(r=>r.classList.toggle('on', +r.dataset.i===S.playIdx));
 }
 
-/* ---------- 页签 ---------- */
-function selectTab(name){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.tab===name));
-  ['exec','traj','py','verdict'].forEach(n=>{
-    q('#pane-'+n).classList.toggle('hidden', n!==name);
+/* ============================================================
+   初始化
+   ============================================================ */
+function init(){
+  loadSave();
+  updateHud();
+  renderHome();
+
+  q('#doorTut').onclick = function(){
+    let target = TUT.length-1;
+    for(let k=0; k<TUT.length; k++){
+      if(!SAVE.tut[TUT[k].id]){ target = k; break; }
+    }
+    tutStart(target);
+  };
+  q('#doorFree').onclick = openBuilder;
+  q('#backBtn').onclick = goHome;
+  q('#tutBack').onclick = goHome;
+  q('#tutRun').onclick = tutRunClick;
+  q('#tutHintBtn').onclick = tutHint;
+
+  q('#tutDock').addEventListener('click', function(e){
+    const btn = e.target.closest('.tpack');
+    if(!btn) return;
+    if(T.busy || T.playing) return;
+    const pid = btn.getAttribute('data-pack');
+    const st = curStep();
+    if(st && st.t==='click'){
+      if('pack:'+pid !== T.want){ toast('先别急，跟着小笨的节奏来～'); return; }
+      addTutPack(pid);
+      tutNext();
+    }else if(st && st.t==='free'){
+      addTutPack(pid);
+    }else{
+      toast('现在还不用加零件，跟着小笨来～');
+    }
   });
-}
-document.querySelectorAll('.tab').forEach(t=>{
-  t.addEventListener('click', ()=>selectTab(t.dataset.tab));
-});
 
-/* ---------- 启动 ---------- */
-renderHome();
+  q('#tutWS').addEventListener('click', function(e){
+    const del = e.target.closest('[data-del]');
+    if(del){
+      const id = del.getAttribute('data-del');
+      const o = findOwner(id);
+      if(o){ o.arr.splice(o.idx, 1); renderTutWS(); }
+      return;
+    }
+    const slot = e.target.closest('.addslot');
+    if(slot){
+      const st = curStep();
+      if(st && st.t==='slot'){ slotClickByEl(slot); }
+      else if(st && st.t==='free'){ toast('自由关直接点零件盒加零件就好～'); }
+      else{ toast('先跟着小笨来～'); }
+    }
+  });
+
+  q('#resetBtn').onclick = function(){
+    openModal('<h3>⚠️ 重置全部进度？</h3><p>闯关记录、XP、自由工坊草稿会<b>全部清空</b>，找不回来的。</p>'+
+      '<div class="mbtns"><button class="btn primary" id="rsOk">全部清空</button><button class="btn ghost" id="rsCancel">算了</button></div>');
+    q('#rsOk').onclick = function(){
+      try{ localStorage.removeItem('logicForgeSave'); localStorage.removeItem('logicForgeSandbox'); }catch(e){}
+      SAVE.xp = 0; SAVE.tut = {}; SAVE.free = null;
+      persist(); updateHud(); renderHome(); closeModal();
+      toast('已重置，从头再来！');
+    };
+    q('#rsCancel').onclick = closeModal;
+  };
+
+  q('#modalWrap').addEventListener('click', function(e){
+    if(e.target === q('#modalWrap')) closeModal();
+  });
+
+  /* 自由工坊 */
+  q('#runBtn').onclick = fwRun;
+  q('#stopBtn').onclick = fwStop;
+  q('#clearBtn').onclick = function(){
+    S.blocks = [];
+    FW.r = null;
+    renderWS();
+    renderPane();
+    markDirty();
+  };
+  q('#addVarBtn').onclick = fwNewVarModal;
+  q('#demoVarBtn').onclick = fwDemoVars;
+  const goalInput = q('#goalInput');
+  goalInput.addEventListener('input', markDirty);
+}
+init();
 </script>
 </body>
 </html>
+
